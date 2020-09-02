@@ -1,13 +1,11 @@
 import { Router } from 'express';
-// import auth from './auth';
-// import user from './user';
-// import item from './item';
-import riotRes from './riot';
+import auth from './auth';
+import user from './user';
+import item from './item';
 const router = Router();
 
-// router.use('/auth', auth);
-// router.use('/user', user);
-// router.use('/item', item);
-router.use('/riotRes', riotRes);
+router.use('/auth', auth);
+router.use('/user', user);
+router.use('/item', item);
 
 export default router;
