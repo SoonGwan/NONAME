@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './Nav.scss';
 
 const Nav = () => {
-  const NavItem = ({ navName, link }) => {
+  const Nav = ({ navName, link }) => {
     const { pathname } = useLocation();
     const active = 'Nav-Item-active';
 
@@ -19,10 +19,10 @@ const Nav = () => {
   return (
     <>
       <div className="Nav">
-        <NavItem navName="홈" link={'/'} />
-        <NavItem navName="팀을 찾아요" link={'/find'} />
-        <NavItem navName="팀 만들기" link={'/make'} />
-        <NavItem navName="내 프로필" link={'/my'} />
+        <Nav navName="홈" link={'/'} />
+        <Nav navName="팀을 찾아요" link={'/find'} />
+        <Nav navName="팀 만들기" link={'/make'} />
+        <Nav navName="내 프로필" link={'/my'} />
       </div>
     </>
   );
