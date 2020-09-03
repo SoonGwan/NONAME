@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/express": "^4.17.7",
     "@types/jsonwebtoken": "^8.5.0",
+    "@types/multer": "^1.4.4",
     "@types/request-promise-native": "^1.0.17",
     "api": "^2.2.0",
     "axios": "^0.20.0",
