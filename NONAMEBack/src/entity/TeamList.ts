@@ -28,4 +28,10 @@ export default class TeamList extends BaseEntity {
     nullable: false,
   })
   mainImage: string;
+
+  @Column({
+    length: 255,
+    nullable: false,
+  })
+  whoMade: string;
 }
