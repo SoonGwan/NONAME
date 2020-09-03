@@ -30,6 +30,7 @@ export default async (req: Request, res: Response) => {
         idx,
       },
     });
+
     if (!team) {
       logger.yellow('팀이 없음');
       res.status(400).json({
