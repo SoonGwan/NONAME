@@ -4,7 +4,7 @@ import './Footer.scss';
 const Footer = () => {
   return (
     <>
-      <div>푸터</div>
+      <div className="Footer">푸터입니다.</div>
     </>
   );
 };
