@@ -1,13 +1,19 @@
 import React from 'react';
 import './Header.scss';
-import {} from 'react-icons';
+import { RiSearchEyeFill, RiMenu2Fill } from 'react-icons/ri';
 const Header = () => {
   return (
     <>
       <div className="Header">
-        <div className="Header-menu"></div>
-        <div className="Header-Title"></div>
-        <div className="Header-Search"></div>
+        <div className="Header-Menu">
+          <RiMenu2Fill />
+        </div>
+        <div className="Header-Title">
+          <span>무제</span> 프로젝트
+        </div>
+        <div className="Header-Search">
+          <RiSearchEyeFill />
+        </div>
       </div>
     </>
   );

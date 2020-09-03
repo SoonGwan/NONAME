@@ -1,5 +1,36 @@
 .Header {
+  display: flex;
+  justify-content: space-between;
   width: 640px;
   height: 45px;
   margin: auto;
+  &-Menu {
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+    & > * {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &-Title {
+    margin-top: auto;
+    margin-bottom: auto;
+    & > span {
+      font-weight: 600;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 1.1rem;
+    }
+  }
+  &-Search {
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+
+    & > * {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
