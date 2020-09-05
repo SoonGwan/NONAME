@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import TeamList from '../../../entity/TeamList';
 import logger from '../../../lib/logger';
+import generateURL from '../../../lib/generateURL';
 
 export default async (req: Request, res: Response) => {
   try {
@@ -11,6 +12,11 @@ export default async (req: Request, res: Response) => {
         idx: 'DESC',
       },
     });
+
+    team.map((item: TeamList) => {
+      item.mainImage = generateURL(item.mainImage);
+    });
+
     logger.green('팀 리스트 조회 성공');
     res
       .status(200)
