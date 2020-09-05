@@ -6,7 +6,8 @@ const PostList = ({ idx, teamName, whoMade, mainImage }) => {
     <>
       <div className="PostList" key={idx}>
         <div className="PostList-Item">
-          <img className="PostList-Banner" src={mainImage}></img>
+          {/* <img className="PostList-Banner" src={mainImage}></img> */}
+          <img className="PostList-Banner" src={mainImage} alt="" />
           <div className="PostList-Wrap">
             <div className="PostList-Wrap-Title">{teamName}</div>
             <div className="PostList-Wrap-whoMade">
