@@ -9,9 +9,14 @@ class TeamListStore {
   @action
   async handleTeamList() {
     const response = await TeamListRepository.handleTeamList();
-    console.group(response);
     this.teamList = await response.data.team;
-    console.log(this.teamList);
+    return response;
+  }
+
+  @action
+  async handleTeamInfo(idx) {
+    const response = await TeamListRepository.handleTeamInfo(idx);
+
     return response;
   }
 }
