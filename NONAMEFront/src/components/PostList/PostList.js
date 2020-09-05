@@ -1,10 +1,20 @@
 import React from 'react';
 import './PostList.scss';
 
-const PostList = ({ idx, teamName, whoMade, mainImage }) => {
+const PostList = ({
+  idx,
+  teamName,
+  whoMade,
+  mainImage,
+  requestHandleTeamInfo,
+}) => {
   return (
     <>
-      <div className="PostList" key={idx}>
+      <div
+        className="PostList"
+        key={idx}
+        onClick={() => requestHandleTeamInfo(idx)}
+      >
         <div className="PostList-Item">
           {/* <img className="PostList-Banner" src={mainImage}></img> */}
           <img className="PostList-Banner" src={mainImage} alt="" />

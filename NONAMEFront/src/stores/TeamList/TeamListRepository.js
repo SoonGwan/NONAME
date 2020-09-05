@@ -6,6 +6,12 @@ class TeamListRepository {
 
     return data;
   };
+
+  handleTeamInfo = async (idx) => {
+    const { data } = await axios.get(`${SERVER}/team/infoTeam?idx=${idx}`);
+
+    return data;
+  };
 }
 
 export default new TeamListRepository();
