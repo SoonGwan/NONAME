@@ -7,33 +7,36 @@ import Main from 'components/Main';
 const TeamListContainer = observer(() => {
   const { store } = useStores();
   const { handleTeamList, teamList } = store.TeamListStore;
-
-  // const resquestHandleTeamList = useCallback(async () => {
-  //   try {
-  //     await handleTeamList();
-  //   } catch (error) {
-  //     return error;
-  //   }
-  // });
+  console.log('teamList', teamList);
+  const resquestHandleTeamList = useCallback(async () => {
+    try {
+      await handleTeamList();
+    } catch (error) {
+      return error;
+    }
+  }, [handleTeamList]);
 
   useEffect(() => {
-    handleTeamList();
+    resquestHandleTeamList();
   }, []);
 
-  // const test =
-  //   teamList &&
-  //   teamList.map((data) => {
-  //     const { whoMade } = data;
-  //     return (
-  //       <div>
-  //         <div>{whoMade}</div>
-  //       </div>
-  //     );
-  //   });
+  const ListMap = teamList.map((data) => {
+    const { idx, teamName, whoMade, mainImage } = data;
+    return (
+      <>
+        <PostList
+          idx={idx}
+          teamName={teamName}
+          whoMade={whoMade}
+          mainImage={mainImage}
+        />
+      </>
+    );
+  });
 
   return (
     <>
-      <Main teamList={teamList} />
+      <Main ListMap={ListMap} />
     </>
   );
 });
