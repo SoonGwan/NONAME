@@ -1,18 +1,18 @@
 import React from 'react';
 import './PostList.scss';
 
-const PostList = () => {
+const PostList = ({ idx, teamName, whoMade, mainImage }) => {
   return (
     <>
-      <div className="PostList">
+      <div className="PostList" key={idx}>
         <div className="PostList-Item">
-          <div className="PostList-Banner"></div>
+          <img className="PostList-Banner" src={mainImage}></img>
           <div className="PostList-Wrap">
-            <div className="PostList-Wrap-Title">
-              누구세요? 하는 프로젝트를 만드는 사람
-            </div>
+            <div className="PostList-Wrap-Title">{teamName}</div>
             <div className="PostList-Wrap-whoMade">
-              <div className="PostList-Wrap-whoMade-Name">Made In 순관</div>
+              <div className="PostList-Wrap-whoMade-Name">
+                Made In {whoMade}
+              </div>
             </div>
           </div>
         </div>
