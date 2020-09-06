@@ -29,40 +29,49 @@ const Write = ({
 }) => {
   return (
     <>
-      <input
-        type="text"
-        placeholder="팀 이름"
-        value={teamName}
-        onChange={(e) => setTeamName(e.target.value)}
-      />
-      <input type="file" onChange={onDrop} />
+      <div className="Write">
+        <input
+          type="text"
+          placeholder="팀 이름"
+          value={teamName}
+          onChange={(e) => setTeamName(e.target.value)}
+        />
+        <input type="file" onChange={onDrop} />
 
-      <button onClick={() => requestHandleUpLoad()}>사진 업로드</button>
-      <input
-        type="text"
-        placeholder="작성자"
-        value={whoMade}
-        onChange={(e) => setWhoMade(e.target.value)}
-      />
-      <MdEditor
-        ref={mdEditor}
-        value={value}
-        style={{
-          width: '640px',
-          height: '500px',
-          margin: 'auto',
-        }}
-        onChange={handleEditorChange}
-        renderHTML={(text) => <ReactMarkdown source={text} />}
-        config={{
-          view: {
+        <button onClick={() => requestHandleUpLoad()}>사진 업로드</button>
+        <input
+          type="text"
+          placeholder="작성자"
+          value={whoMade}
+          onChange={(e) => setWhoMade(e.target.value)}
+        />
+        <MdEditor
+          ref={mdEditor}
+          value={value}
+          style={{
+            width: '640px',
+            height: '500px',
+            margin: 'auto',
+          }}
+          canView={{
             menu: true,
             md: true,
             html: true,
-          },
-        }}
-      />
-      <button onClick={() => requestHandleTeamMake()}>글쓰기</button>
+            fullScreen: false,
+            hideMenu: true,
+          }}
+          onChange={handleEditorChange}
+          renderHTML={(text) => <ReactMarkdown source={text} />}
+          config={{
+            view: {
+              menu: true,
+              md: true,
+              html: true,
+            },
+          }}
+        />
+        <button onClick={() => requestHandleTeamMake()}>글쓰기</button>
+      </div>
     </>
   );
 };

@@ -1,6 +1,14 @@
+// .Write {
+//   &-upload {
+//     width: 640px;
+//     margin: auto;
+//   }
+// }
 .Write {
-  &-upload {
-    width: 640px;
-    margin: auto;
-  }
+  width: 640px;
+  height: 100%;
+  margin: auto;
+}
+.button-type-fullscreen {
+  display: none;
 }
