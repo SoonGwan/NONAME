@@ -7,36 +7,54 @@ import 'highlight.js/styles/atom-one-light.css';
 
 // import style manually
 import 'react-markdown-editor-lite/lib/index.css';
+import ImageUploader from 'react-images-upload';
 
-const Write = () => {
-  const mdEditor = useRef(null);
-  const [value, setValue] = useState();
-
-  const handleEditorChange = ({ html, text }) => {
-    const newValue = text.replace(/\d/g, '');
-    console.log(newValue);
-    setValue(newValue);
-    //
-    //
+const Write = ({
+  value,
+  setValue,
+  mdEditor,
+  handleEditorChange,
+  requestHandleTeamMake,
+  teamName,
+  setTeamName,
+  mainImage,
+  setMainImage,
+  whoMade,
+  setWhoMade,
+  //   onDrop,
+  //   pictures,
+  //   setPictures,
+  requestHandleUpLoad,
+}) => {
+  //   const mdEditor = useRef(null);
+  //   const [value, setValue] = useState();
+  const [pictures, setPictures] = useState([]);
+  const [files, setFiles] = useState([]);
+  const onDrop = (file, pictures) => {
+    setFiles(file);
   };
+
   return (
     <>
-      <div>글쓰기</div>
-      {/* <MdEditor
-        // ref={(node) => (mdEditor = node)}
-        value=""
-        style={{ height: '500px' }}
-        renderHTML={(text) => mdParser.render(text)}
-        // renderHTML={this.renderHTML}
-        onChange={handleEditorChange}
-        config={{
-          view: {
-            menu: true,
-            md: true,
-            html: true,
-          },
-        }}
-      /> */}
+      <input
+        type="text"
+        placeholder="팀 이름"
+        value={teamName}
+        onChange={(e) => setTeamName(e.target.value)}
+      />
+      <ImageUploader
+        withIcon={true}
+        onChange={onDrop}
+        imgExtension={['.jpg', '.gif', '.png', '.gif']}
+        maxFileSize={5242880}
+      />
+      <button onClick={() => requestHandleUpLoad()}>사진 업로드</button>
+      <input
+        type="text"
+        placeholder="작성자"
+        value={whoMade}
+        onChange={(e) => setWhoMade(e.target.value)}
+      />
       <MdEditor
         ref={mdEditor}
         value={value}
@@ -55,6 +73,7 @@ const Write = () => {
           },
         }}
       />
+      <button onClick={() => requestHandleTeamMake()}>글쓰기</button>
     </>
   );
 };
