@@ -7,9 +7,11 @@ import Main from './Main';
 const App = () => {
   return (
     <>
-      <div>
-        <Pages.MainPage />
-      </div>
+      <Switch>
+        <Route exact path="/" render={() => <Pages.MainPage />} />
+        {/* <Pages.MainPage /> */}
+        <Route exact path="/make" render={() => <Pages.WritePage />} />
+      </Switch>
     </>
   );
 };

@@ -8,6 +8,7 @@ export default async (req: Request, res: Response) => {
     teamName: string;
     explain: string;
     mainImage: string;
+    whoMade: string;
   };
 
   const data: RequestBody = req.body;
