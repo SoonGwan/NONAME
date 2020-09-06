@@ -11,12 +11,13 @@ const TeamMakeContainer = observer(() => {
   const [teamName, setTeamName] = useState('');
   const [mainImage, setMainImage] = useState('');
   const [whoMade, setWhoMade] = useState('');
+  const [image, setImage] = useState();
   const mdEditor = useRef(null);
-  const [pictures, setPictures] = useState();
 
-  const onDrop = (picture) => {
-    setPictures(picture);
+  const onDrop = (e) => {
+    setImage(e.target.files);
   };
+
   const handleEditorChange = ({ html, text }) => {
     const newValue = text.replace(/\d/g, '');
     console.log(newValue);
@@ -29,32 +30,25 @@ const TeamMakeContainer = observer(() => {
     const data = {
       teamName,
       explain: value,
-      mainImage: pictures[0],
+      mainImage,
       whoMade,
     };
-    console.log(data);
     try {
       const response = await handleTeamMake(data);
       console.log(response);
     } catch (error) {
-      console.log(error);
       return error;
     }
   });
 
   const requestHandleUpLoad = useCallback(async () => {
-    const data = {
-      pictures: pictures[0].name,
-    };
-    console.log(data);
     try {
-      const response = await handleUpLoad(data);
+      const response = await handleUpLoad(image);
       console.log(response);
     } catch (error) {
-      console.log(error);
       return error;
     }
-  });
+  }, [image]);
 
   return (
     <>
@@ -71,8 +65,8 @@ const TeamMakeContainer = observer(() => {
         whoMade={whoMade}
         setWhoMade={setWhoMade}
         onDrop={onDrop}
-        pictures={pictures}
-        setPictures={setPictures}
+        image={image}
+        setImage={setImage}
         requestHandleUpLoad={requestHandleUpLoad}
       />
     </>

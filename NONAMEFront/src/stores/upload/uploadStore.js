@@ -9,6 +9,8 @@ class uploadStore {
   @action
   async handleUpLoad(request) {
     const response = await uploadRepository.handleUpLoad(request);
+    console.log('request', request);
+    console.log(response);
     this.imgURL = await response.data.files[0];
     return response;
   }
