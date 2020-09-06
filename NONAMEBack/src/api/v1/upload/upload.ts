@@ -4,6 +4,7 @@ import logger from '../../../lib/logger';
 export default async (request, response: Response) => {
   try {
     const reqFiles = await request.files;
+    console.log(reqFiles);
     logger.red('파일 오류', reqFiles);
     const files: string[] = [];
 
