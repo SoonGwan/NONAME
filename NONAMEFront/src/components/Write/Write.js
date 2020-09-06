@@ -4,7 +4,7 @@ import MdEditor from 'react-markdown-editor-lite';
 import ReactMarkdown from 'react-markdown';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-light.css';
-
+import './Write.scss';
 // import style manually
 import 'react-markdown-editor-lite/lib/index.css';
 import ImageUploader from 'react-images-upload';
@@ -21,19 +21,12 @@ const Write = ({
   setMainImage,
   whoMade,
   setWhoMade,
-  //   onDrop,
-  //   pictures,
-  //   setPictures,
+  onDrop,
+  pictures,
+  setPictures,
   requestHandleUpLoad,
+  image,
 }) => {
-  //   const mdEditor = useRef(null);
-  //   const [value, setValue] = useState();
-  const [pictures, setPictures] = useState([]);
-  const [files, setFiles] = useState([]);
-  const onDrop = (file, pictures) => {
-    setFiles(file);
-  };
-
   return (
     <>
       <input
@@ -42,12 +35,8 @@ const Write = ({
         value={teamName}
         onChange={(e) => setTeamName(e.target.value)}
       />
-      <ImageUploader
-        withIcon={true}
-        onChange={onDrop}
-        imgExtension={['.jpg', '.gif', '.png', '.gif']}
-        maxFileSize={5242880}
-      />
+      <input type="file" onChange={onDrop} />
+
       <button onClick={() => requestHandleUpLoad()}>사진 업로드</button>
       <input
         type="text"
