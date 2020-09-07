@@ -14,8 +14,7 @@ const Modal = ({ handleClose, width, height, children }) => {
             />
             <hr />
           </div>
-          <div className="Modal-Item">여기 아이템</div>
-          {children}
+          <div className="Modal-Item">{children}</div>
         </div>
       </div>
     </>

@@ -33,5 +33,7 @@
     text-align: right;
   }
   &-Item {
+    display: flex;
+    flex-direction: column;
   }
 }
