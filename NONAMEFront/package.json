@@ -37,6 +37,7 @@
     "react-pell": "^0.4.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-toastify": "^6.0.8",
     "secure-ls": "^1.2.6",
     "styled-components": "^5.1.0",
     "sweetalert2": "^9.10.2"
