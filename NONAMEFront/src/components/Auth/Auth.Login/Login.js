@@ -37,14 +37,66 @@ const Login = ({ handleLoginModal }) => {
         ) : (
           <>
             <div className="Register">
-              <div className="Regitser-WrapID">
-                <p>너의 아이디를 입력해줘</p>
-                <input
-                  className="Regitser-WrapID-ID"
-                  type="text"
-                  placeholder="여기야 여기"
-                />
+              <div className="Register-Title">진짜로 가입 할거죠?</div>
+              <div
+                style={{
+                  display: 'flex',
+                  marginTop: '15px',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div className="Register-WrapID">
+                  <p>너의 이름을 입력해줘</p>
+                  <input
+                    className="Register-WrapID-ID"
+                    type="text"
+                    placeholder="내 이름은 순관이야"
+                  />
+                </div>
+                <div className="Register-WrapID">
+                  <p>너의 아이디를 입력해줘</p>
+                  <input
+                    className="Register-WrapID-ID"
+                    type="text"
+                    placeholder="여기야 여기"
+                  />
+                </div>
               </div>
+              <div>
+                <div className="Register-WrapEmail">
+                  <p>너의 이메일을 입력해줘</p>
+                  <input
+                    className="Register-WrapEmail-Email"
+                    type="email"
+                    placeholder="나는 구글을 좋아해"
+                  />
+                </div>
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  marginTop: '15px',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div className="Register-WrapPW">
+                  <p>너의 비밀번호를 입력해줘</p>
+                  <input
+                    className="Register-WrapPW-PW"
+                    type="email"
+                    placeholder="비밀번호 어려운게 좋아"
+                  />
+                </div>
+                <div className="Register-WrapPW">
+                  <p>너의 비밀번호를 다시 입력해줘</p>
+                  <input
+                    className="Register-WrapPW-PW"
+                    type="email"
+                    placeholder="다시한번 입력해줘"
+                  />
+                </div>
+              </div>
+              <button className="Login-Button">우리 진짜 함께 할거죠?</button>
             </div>
           </>
         )}
