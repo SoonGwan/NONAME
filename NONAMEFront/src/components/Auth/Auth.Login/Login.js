@@ -1,14 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import Modal from 'components/common/Modal/Modal';
+import { AiOutlineUser } from 'react-icons/ai';
+import { RiLockPasswordLine } from 'react-icons/ri';
 const Login = ({ handleLoginModal }) => {
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <>
-      <Modal
-        handleClose={handleLoginModal}
-        width={'480px'}
-        height={'480px'}
-      ></Modal>
+      <Modal handleClose={handleLoginModal} width={'480px'} height={'480px'}>
+        {isLogin ? (
+          <>
+            <div className="Login">
+              <div className="Login-Title">들어가고 싶어요?</div>
+              <div className="Login-WrapID">
+                <p>너의 아이디를 입력해줘</p>
+                <input
+                  className="Login-WrapID-ID"
+                  type="text"
+                  placeholder="여기야 여기"
+                />
+              </div>
+              <div className="Login-WrapPW">
+                <p>너의 비밀번호를 입력해줘</p>
+                <input
+                  className="Login-WrapPW-PW"
+                  type="password"
+                  placeholder="여기야 여기"
+                />
+              </div>
+              <div className="Login-Register" onClick={() => setIsLogin(false)}>
+                나 계정없는데..
+              </div>
+              <button className="Login-Button">로그인 해봐요.</button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="Register">
+              <div className="Regitser-WrapID">
+                <p>너의 아이디를 입력해줘</p>
+                <input
+                  className="Regitser-WrapID-ID"
+                  type="text"
+                  placeholder="여기야 여기"
+                />
+              </div>
+            </div>
+          </>
+        )}
+      </Modal>
     </>
   );
 };
