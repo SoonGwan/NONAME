@@ -5,10 +5,27 @@ import PostInfo from 'components/PostList/PostInfo/PostInfo';
 
 const TeamInfoContainer = observer(() => {
   const { store } = useStore();
-  const { isInfoModal, handleInfoModal } = store.TeamListStore;
-
+  const {
+    isInfoModal,
+    handleInfoModal,
+    teamName,
+    whoMade,
+    mainImage,
+    explain,
+  } = store.TeamListStore;
+  console.log(teamName);
   return (
-    <>{isInfoModal ? <PostInfo handleInfoModal={handleInfoModal} /> : null}</>
+    <>
+      {isInfoModal ? (
+        <PostInfo
+          handleInfoModal={handleInfoModal}
+          teamName={teamName}
+          whoMade={whoMade}
+          mainImage={mainImage}
+          explain={explain}
+        />
+      ) : null}
+    </>
   );
 });
 
