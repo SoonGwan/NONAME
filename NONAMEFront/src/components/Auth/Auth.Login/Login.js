@@ -3,7 +3,9 @@ import './Login.scss';
 const Login = () => {
   return (
     <>
-      <div className="Login">음 엄청 좋구만</div>
+      <div className="Login">
+        <div className="Login-Wrap">음 엄청 좋구만</div>
+      </div>
     </>
   );
 };

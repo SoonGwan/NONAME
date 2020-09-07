@@ -5,6 +5,7 @@ import SecureLS from 'secure-ls';
 
 @autobind
 class AuthStore {
+  @observable isLoginModal = false;
   @action
   async handleLogin(request) {
     const response = await AuthRepository.handleLogin(request);
@@ -16,6 +17,11 @@ class AuthStore {
 
     return response;
   }
+
+  @action
+  handleLoginModal = () => {
+    this.isLoginModal = !this.isLoginModal;
+  };
 }
 
 export default AuthStore;
