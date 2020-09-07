@@ -1,10 +1,13 @@
-import { action, autobind, observable } from 'mobx-react';
+import { action, observable } from 'mobx';
+import { autobind } from 'core-decorators';
 import AuthRepository from './AuthRepository';
+import SecureLS from 'secure-ls';
 
+@autobind
 class AuthStore {
+  @action
   async handleLogin(request) {
     const response = await AuthRepository.handleLogin(request);
-
     return response;
   }
 
