@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './Login.scss';
 const Login = () => {
   return (
     <>
-      <div></div>
+      <div className="Login">음 엄청 좋구만</div>
     </>
   );
 };
