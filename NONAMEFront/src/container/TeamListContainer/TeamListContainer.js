@@ -6,7 +6,13 @@ import Main from 'components/Main';
 
 const TeamListContainer = observer(() => {
   const { store } = useStores();
-  const { handleTeamList, teamList, handleTeamInfo } = store.TeamListStore;
+  const {
+    handleTeamList,
+    teamList,
+    handleTeamInfo,
+    handleInfoModal,
+    handleInfoContent,
+  } = store.TeamListStore;
   console.log('teamList', teamList);
   const resquestHandleTeamList = useCallback(async () => {
     try {
@@ -20,7 +26,10 @@ const TeamListContainer = observer(() => {
     async (idx) => {
       try {
         const response = await handleTeamInfo(idx);
-        console.log(response);
+        const { explain, mainImage, teamName, whoMade } = response.data.team;
+        handleInfoContent({ teamName, mainImage, explain, whoMade });
+        handleInfoModal();
+        console.log(teamName, mainImage, explain, whoMade);
         return response;
       } catch (error) {
         return error;

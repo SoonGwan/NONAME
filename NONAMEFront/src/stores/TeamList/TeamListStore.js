@@ -5,6 +5,11 @@ import TeamListRepository from './TeamListRepository';
 @autobind
 class TeamListStore {
   @observable teamList = [];
+  @observable isInfoModal = false;
+  @observable teamName = '';
+  @observable whoMade = '';
+  @observable mainImage = '';
+  @observable explain = '';
 
   @action
   async handleTeamList() {
@@ -19,6 +24,20 @@ class TeamListStore {
 
     return response;
   }
+
+  @action
+  handleInfoModal = () => {
+    this.isInfoModal = !this.isInfoModal;
+  };
+
+  @action
+  handleInfoContent = ({ teamName, mainImage, explain, whoMade }) => {
+    this.teamName = teamName;
+    this.mainImage = mainImage;
+    this.explain = explain;
+    this.whoMade = whoMade;
+    console.log(teamName, mainImage, explain, whoMade);
+  };
 }
 
 export default TeamListStore;

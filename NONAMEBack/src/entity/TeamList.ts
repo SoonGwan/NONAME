@@ -18,7 +18,7 @@ export default class TeamList extends BaseEntity {
   teamName: string;
 
   @PrimaryColumn({
-    length: 255,
+    length: 25500,
     nullable: false,
   })
   explain: string;

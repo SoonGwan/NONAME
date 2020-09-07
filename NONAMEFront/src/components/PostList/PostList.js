@@ -1,5 +1,6 @@
 import React from 'react';
 import './PostList.scss';
+import TeamInfoContainer from 'container/TeamListContainer/TeamInfoContainer';
 
 const PostList = ({
   idx,
