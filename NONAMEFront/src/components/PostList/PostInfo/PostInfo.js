@@ -1,12 +1,22 @@
 import React from 'react';
-import './PostInfo.scss';
+import Modal from 'components/common/Modal/Modal';
 
-const PostInfo = () => {
+const PostInfo = ({
+  handleInfoModal,
+  teamName,
+  whoMade,
+  mainImage,
+  explain,
+}) => {
   return (
     <>
-      <div className="PostInfo">
-        <div className="PostInfo-Wrap">인포 랩</div>
-      </div>
+      <Modal handleClose={handleInfoModal} width={'640px'} height={'1024px'}>
+        sadasgdahjsdgka
+        {teamName}
+        {whoMade}
+        {mainImage}
+        {explain}
+      </Modal>
     </>
   );
 };
