@@ -72,6 +72,31 @@ const Login = ({ handleLoginModal }) => {
                   />
                 </div>
               </div>
+              <div
+                style={{
+                  display: 'flex',
+                  marginTop: '15px',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div className="Register-WrapPW">
+                  <p>너의 비밀번호를 입력해줘</p>
+                  <input
+                    className="Register-WrapPW-PW"
+                    type="email"
+                    placeholder="비밀번호 어려운게 좋아"
+                  />
+                </div>
+                <div className="Register-WrapPW">
+                  <p>너의 비밀번호를 다시 입력해줘</p>
+                  <input
+                    className="Register-WrapPW-PW"
+                    type="email"
+                    placeholder="다시한번 입력해줘"
+                  />
+                </div>
+              </div>
+              <button className="Login-Button">우리 진짜 함께 할거죠?</button>
             </div>
           </>
         )}
