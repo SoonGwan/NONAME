@@ -5,6 +5,7 @@ import TeamListRepository from './TeamListRepository';
 @autobind
 class TeamListStore {
   @observable teamList = [];
+  @observable isInfoModal = false;
 
   @action
   async handleTeamList() {
@@ -19,6 +20,11 @@ class TeamListStore {
 
     return response;
   }
+
+  @action
+  handleInfoModal = () => {
+    this.isInfoModal = !this.isInfoModal;
+  };
 }
 
 export default TeamListStore;
