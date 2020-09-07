@@ -1,11 +1,14 @@
 import React from 'react';
 import './Login.scss';
-const Login = () => {
+import Modal from 'components/common/Modal/Modal';
+const Login = ({ handleLoginModal }) => {
   return (
     <>
-      <div className="Login">
-        <div className="Login-Wrap">음 엄청 좋구만</div>
-      </div>
+      <Modal
+        handleClose={handleLoginModal}
+        width={'480px'}
+        height={'480px'}
+      ></Modal>
     </>
   );
 };
