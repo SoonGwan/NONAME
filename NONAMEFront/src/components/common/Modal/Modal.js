@@ -5,7 +5,7 @@ const Modal = ({ handleClose, width, height, children }) => {
     <>
       <div className="Modal">
         <div className="Modal-PostBackGround" onClick={handleClose}></div>
-        <div className="PostInfo-Wrap" style={{ width: width, height: height }}>
+        <div className="Modal-Wrap" style={{ width: width, height: height }}>
           {children}
         </div>
       </div>
