@@ -1,7 +1,14 @@
 import React from 'react';
-import './PostList.scss';
 import TeamInfoContainer from 'container/TeamListContainer/TeamInfoContainer';
-
+import {
+  PostListStyles,
+  PostItem,
+  PostImg,
+  PostWrap,
+  PostWrapTitle,
+  PostWriterWrap,
+  PostWriterName,
+} from './PostList.style';
 const PostList = ({
   idx,
   teamName,
@@ -11,24 +18,19 @@ const PostList = ({
 }) => {
   return (
     <>
-      <div
-        className="PostList"
-        key={idx}
-        onClick={() => requestHandleTeamInfo(idx)}
-      >
-        <div className="PostList-Item">
-          {/* <img className="PostList-Banner" src={mainImage}></img> */}
-          <img className="PostList-Banner" src={mainImage} alt="" />
-          <div className="PostList-Wrap">
-            <div className="PostList-Wrap-Title">{teamName}</div>
-            <div className="PostList-Wrap-whoMade">
-              <div className="PostList-Wrap-whoMade-Name">
+      <PostListStyles onClick={() => requestHandleTeamInfo(idx)}>
+        <PostItem>
+          <PostImg src={mainImage} alt={mainImage} />
+          <PostWrap>
+            <PostWrapTitle>{teamName}</PostWrapTitle>
+            <PostWriterWrap className="PostList-Wrap-whoMade">
+              <PostWriterName className="PostList-Wrap-whoMade-Name">
                 Made In {whoMade}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </PostWriterName>
+            </PostWriterWrap>
+          </PostWrap>
+        </PostItem>
+      </PostListStyles>
     </>
   );
 };
