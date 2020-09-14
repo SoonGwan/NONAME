@@ -1,22 +1,30 @@
 import React from 'react';
-import './Modal.scss';
 import { AiFillCloseSquare } from 'react-icons/ai';
+import styled from 'styled-components';
+import {
+  ModalStyles,
+  PostBackGround,
+  ModalWrap,
+  ModalCancel,
+  ModalItem,
+} from './Modal.style.jsx';
+
 const Modal = ({ handleClose, width, height, children }) => {
   return (
     <>
-      <div className="Modal">
-        <div className="Modal-PostBackGround" onClick={handleClose}></div>
-        <div className="Modal-Wrap" style={{ width: width, height: height }}>
-          <div className="Modal-Cancel">
+      <ModalStyles>
+        <PostBackGround onClick={handleClose}></PostBackGround>
+        <ModalWrap style={{ width: width, height: height }}>
+          <ModalCancel>
             <AiFillCloseSquare
               onClick={() => handleClose()}
               style={{ cursor: 'pointer', width: '20px', height: '20px' }}
             />
             <hr />
-          </div>
-          <div className="Modal-Item">{children}</div>
-        </div>
-      </div>
+          </ModalCancel>
+          <ModalItem>{children}</ModalItem>
+        </ModalWrap>
+      </ModalStyles>
     </>
   );
 };
