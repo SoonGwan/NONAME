@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiFillCloseSquare } from 'react-icons/ai';
-import styled from 'styled-components';
 import {
   ModalStyles,
   PostBackGround,
