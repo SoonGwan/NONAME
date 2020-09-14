@@ -1,4 +1,6 @@
-.Main {
+import styled from 'styled-components';
+
+export const MainStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -8,4 +10,4 @@
   height: 100%;
   background-color: #fff;
   margin: auto;
-}
+`;
