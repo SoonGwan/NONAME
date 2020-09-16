@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { RiLoginBoxFill, RiMenu2Fill } from 'react-icons/ri';
 import { CgProfile } from 'react-icons/cg';
 import { useHistory } from 'react-router-dom';
@@ -15,7 +15,17 @@ import {
 } from './Header.style';
 const Header = observer(() => {
   const { store } = useStore();
-  const { isLoginModal, handleLogin, handleLoginModal } = store.AuthStore;
+  const {
+    isLoginModal,
+    handleLogin,
+    handleLoginModal,
+    userName,
+    handleUserInfo,
+  } = store.AuthStore;
+  console.log(userName);
+  useEffect(() => {
+    handleUserInfo();
+  });
   return (
     <>
       <HeaderStyles>
@@ -25,9 +35,7 @@ const Header = observer(() => {
         <HeaderTitle>
           <HeaderTitleItem>무제</HeaderTitleItem> 프로젝트
         </HeaderTitle>
-        <HeaderSearch>
-          <CgProfile />
-        </HeaderSearch>
+        <HeaderSearch>{!userName ? '' : userName + ' 님'}</HeaderSearch>
       </HeaderStyles>
       <AuthContainer />
     </>
