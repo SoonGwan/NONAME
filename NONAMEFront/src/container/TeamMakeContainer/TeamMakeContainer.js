@@ -16,7 +16,9 @@ const TeamMakeContainer = observer(() => {
 
   const onDrop = (e) => {
     setImage(e.target.files);
+    console.log(e.target.files);
   };
+  console.log(imgURL);
 
   const handleEditorChange = ({ html, text }) => {
     const newValue = text.replace(/\d/g, '');
@@ -30,7 +32,7 @@ const TeamMakeContainer = observer(() => {
     const data = {
       teamName,
       explain: value,
-      mainImage,
+      mainImage: imgURL,
       whoMade,
     };
     try {
