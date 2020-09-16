@@ -33,6 +33,12 @@ class AuthStore {
   handleLoginModal = () => {
     this.isLoginModal = !this.isLoginModal;
   };
+
+  @action
+  handleLogout = () => {
+    sessionStorage.removeItem('token');
+    location.reload();
+  };
 }
 
 export default AuthStore;

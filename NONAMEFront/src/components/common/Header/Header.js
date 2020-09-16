@@ -21,6 +21,7 @@ const Header = observer(() => {
     handleLoginModal,
     userName,
     handleUserInfo,
+    handleLogout,
   } = store.AuthStore;
   console.log(userName);
   useEffect(() => {
@@ -30,7 +31,11 @@ const Header = observer(() => {
     <>
       <HeaderStyles>
         <HeaderMenu>
-          <RiLoginBoxFill onClick={() => handleLoginModal()} />
+          <RiLoginBoxFill
+            onClick={
+              !userName ? () => handleLoginModal() : () => handleLogout()
+            }
+          />
         </HeaderMenu>
         <HeaderTitle>
           <HeaderTitleItem>무제</HeaderTitleItem> 프로젝트
