@@ -31,16 +31,16 @@ const Write = ({
   return (
     <>
       <WriteStyles>
-        <TeamName
-          type="text"
-          placeholder="팀 이름"
-          value={teamName}
-          onChange={(e) => setTeamName(e.target.value)}
-        />
         {/* <input type="file" onChange={onDrop} /> */}
 
         <div class="filebox">
-          <FileLabel for="file">업로드</FileLabel>
+          <TeamName
+            type="text"
+            placeholder="팀 이름"
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
+          />
+          <FileLabel for="file">불러오기</FileLabel>
           <input type="file" id="file" onChange={onDrop} />
 
           <input
@@ -49,8 +49,8 @@ const Write = ({
             // value={(e) => e.target.files.name}
             onChange={onDrop}
           />
+          <button onClick={() => requestHandleUpLoad()}>사진 업로드</button>
         </div>
-        <button onClick={() => requestHandleUpLoad()}>사진 업로드</button>
 
         <input
           type="text"

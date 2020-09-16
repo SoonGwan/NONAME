@@ -12,6 +12,9 @@
 .button-type-fullscreen {
   display: none;
 }
+.filebox {
+  display: flex;
+}
 .filebox input[type='file'] {
   position: absolute;
   width: 0;
@@ -42,4 +45,5 @@
   background-color: #f5f5f5;
   border: 1px solid #ebebeb;
   border-radius: 5px;
+  height: 46px;
 }
