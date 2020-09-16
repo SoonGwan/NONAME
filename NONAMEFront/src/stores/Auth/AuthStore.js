@@ -6,6 +6,7 @@ import SecureLS from 'secure-ls';
 @autobind
 class AuthStore {
   @observable isLoginModal = false;
+  @observable userName = '';
   @action
   async handleLogin(request) {
     const response = await AuthRepository.handleLogin(request);
@@ -19,8 +20,24 @@ class AuthStore {
   }
 
   @action
+  async handleUserInfo() {
+    const response = await AuthRepository.userInfo();
+    // sessionStorage.setItem('name', response.data.list.name);
+    // sessionStorage.setItem('id', response.data.list.id);
+    this.userName = response.data.list.id;
+
+    return response;
+  }
+
+  @action
   handleLoginModal = () => {
     this.isLoginModal = !this.isLoginModal;
+  };
+
+  @action
+  handleLogout = () => {
+    sessionStorage.removeItem('token');
+    location.reload();
   };
 }
 
