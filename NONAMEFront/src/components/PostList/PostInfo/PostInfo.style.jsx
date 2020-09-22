@@ -16,7 +16,7 @@ export const TeamName = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
   color: #ccc;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 14px;
 `;
@@ -24,7 +24,7 @@ export const TeamName = styled.div`
 export const WhoMade = styled(TeamName)`
   margin-top: 4px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 export const ContentWrap = styled.div`
