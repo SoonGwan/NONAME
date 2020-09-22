@@ -26,3 +26,10 @@ export const WhoMade = styled(TeamName)`
   font-weight: 400;
   font-size: 14px;
 `;
+
+export const ContentWrap = styled.div`
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  margin-top: 14px;
+`;

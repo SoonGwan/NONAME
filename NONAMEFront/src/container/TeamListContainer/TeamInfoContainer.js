@@ -23,6 +23,7 @@ const TeamInfoContainer = observer(() => {
           whoMade={whoMade}
           mainImage={mainImage}
           explain={explain}
+          isInfoModal={isInfoModal}
         />
       ) : null}
     </>
