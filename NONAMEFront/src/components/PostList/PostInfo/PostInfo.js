@@ -19,8 +19,6 @@ const PostInfo = ({
   explain,
   isInfoModal,
 }) => {
-  console.log(mainImage.length);
-
   // if (mainImage.length <= 0) {
   //   return mainImage === page404;
   // }

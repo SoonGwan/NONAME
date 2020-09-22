@@ -104,9 +104,7 @@ const AuthContainer = observer(() => {
     }
     try {
       const response = await handleRegister(data);
-      console.log(response);
       const { status } = response;
-      console.log(status);
       if (status === 200) {
         toast.success('회원가입 성공!', {
           position: 'top-right',

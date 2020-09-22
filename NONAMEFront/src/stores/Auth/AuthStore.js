@@ -22,9 +22,6 @@ class AuthStore {
   @action
   async handleUserInfo() {
     const response = await AuthRepository.userInfo();
-    console.log(response);
-    // sessionStorage.setItem('name', response.data.list.name);
-    // sessionStorage.setItem('id', response.data.list.id);
     this.userName = response.data.list.id;
 
     return response;

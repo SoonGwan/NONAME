@@ -36,7 +36,6 @@ class TeamListStore {
     this.mainImage = mainImage;
     this.explain = explain;
     this.whoMade = whoMade;
-    console.log(teamName, mainImage, explain, whoMade);
   };
 }
 
