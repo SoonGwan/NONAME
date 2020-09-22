@@ -168,6 +168,7 @@ const AuthContainer = observer(() => {
           isLogin={isLogin}
           setIsLogin={setIsLogin}
           requestHandleRegister={requestHandleRegister}
+          isLoginModal={isLoginModal}
         />
       ) : null}
     </>
