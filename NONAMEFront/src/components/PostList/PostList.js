@@ -1,5 +1,6 @@
 import React from 'react';
 import TeamInfoContainer from 'container/TeamListContainer/TeamInfoContainer';
+import page404 from 'components/assets/img/page404.png';
 import {
   PostListStyles,
   PostItem,
@@ -16,11 +17,20 @@ const PostList = ({
   mainImage,
   requestHandleTeamInfo,
 }) => {
+  console.log(
+    'mainImagemainImagemainImagemainImagemainImagemainImage',
+    mainImage
+  );
   return (
     <>
       <PostListStyles onClick={() => requestHandleTeamInfo(idx)}>
         <PostItem>
-          <PostImg src={mainImage} alt={mainImage} />
+          <PostImg
+            src={
+              mainImage.includes('.png', 'jpeg', 'jpg') ? mainImage : page404
+            }
+            alt={mainImage}
+          />
           <PostWrap>
             <PostWrapTitle>{teamName}</PostWrapTitle>
             <PostWriterWrap className="PostList-Wrap-whoMade">

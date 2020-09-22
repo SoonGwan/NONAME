@@ -19,10 +19,16 @@ const Login = ({
   rePw,
   setRePw,
   requestHandleRegister,
+  isLoginModal,
 }) => {
   return (
     <>
-      <Modal handleClose={handleLoginModal} width={'480px'} height={'480px'}>
+      <Modal
+        handleClose={handleLoginModal}
+        width={'480px'}
+        height={'480px'}
+        isPress={isLoginModal}
+      >
         {isLogin ? (
           <>
             <div className="Login">
