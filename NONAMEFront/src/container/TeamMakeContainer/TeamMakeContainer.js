@@ -7,6 +7,7 @@ const TeamMakeContainer = observer(() => {
   const { store } = useStores();
   const { handleTeamMake } = store.TeamMakeStore;
   const { handleUpLoad, imgURL } = store.uploadStore;
+  const { handleUserInfo, userName } = store.AuthStore;
   const [value, setValue] = useState();
   const [teamName, setTeamName] = useState('');
   const [mainImage, setMainImage] = useState('');
@@ -33,7 +34,7 @@ const TeamMakeContainer = observer(() => {
       teamName,
       explain: value,
       mainImage: imgURL,
-      whoMade,
+      whoMade: userName,
     };
     try {
       const response = await handleTeamMake(data);
@@ -51,7 +52,9 @@ const TeamMakeContainer = observer(() => {
       return error;
     }
   }, [image]);
-
+  useEffect(() => {
+    handleUserInfo();
+  }, []);
   return (
     <>
       <Write

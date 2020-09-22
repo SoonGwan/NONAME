@@ -44,20 +44,22 @@ const Write = ({
           <input type="file" id="file" onChange={onDrop} />
 
           <input
-            class="upload-name"
+            className="upload-name"
             value={image ? '1개의 사진이 선택되었습니다.' : null}
             // value={(e) => e.target.files.name}
             onChange={onDrop}
           />
-          <button onClick={() => requestHandleUpLoad()}>사진 업로드</button>
+          <button className="uploadImg" onClick={() => requestHandleUpLoad()}>
+            사진 업로드
+          </button>
         </div>
 
-        <input
+        {/* <input
           type="text"
           placeholder="작성자"
           value={whoMade}
           onChange={(e) => setWhoMade(e.target.value)}
-        />
+        /> */}
         <MdEditor
           ref={mdEditor}
           value={value}

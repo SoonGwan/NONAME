@@ -13,6 +13,9 @@ const TeamListContainer = observer(() => {
     handleInfoModal,
     handleInfoContent,
   } = store.TeamListStore;
+
+  const { handleUserInfo, userName } = store.AuthStore;
+
   console.log('teamList', teamList);
   const resquestHandleTeamList = useCallback(async () => {
     try {
@@ -37,9 +40,11 @@ const TeamListContainer = observer(() => {
     },
     [handleTeamInfo]
   );
-
   useEffect(() => {
     resquestHandleTeamList();
+  }, []);
+  useEffect(() => {
+    handleUserInfo();
   }, []);
 
   const ListMap = teamList.map((data) => {
