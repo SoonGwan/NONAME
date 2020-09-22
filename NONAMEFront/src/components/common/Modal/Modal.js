@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import {
   ModalStyles,
@@ -8,7 +8,14 @@ import {
   ModalItem,
 } from './Modal.style.jsx';
 
-const Modal = ({ handleClose, width, height, children }) => {
+const Modal = ({ handleClose, width, height, children, isPress }) => {
+  useEffect(() => {
+    isPress === true
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'unset');
+    return () => (document.body.style.overflow = 'unset');
+  });
+
   return (
     <>
       <ModalStyles>
