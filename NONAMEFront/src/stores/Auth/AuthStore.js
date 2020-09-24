@@ -23,7 +23,7 @@ class AuthStore {
   async handleUserInfo() {
     const response = await AuthRepository.userInfo();
     this.userName = response.data.list.id;
-
+    localStorage.setItem('name', response.data.list.id);
     return response;
   }
 
