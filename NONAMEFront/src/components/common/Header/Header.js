@@ -23,7 +23,6 @@ const Header = observer(() => {
     handleUserInfo,
     handleLogout,
   } = store.AuthStore;
-  console.log(userName);
   useEffect(() => {
     handleUserInfo();
   });

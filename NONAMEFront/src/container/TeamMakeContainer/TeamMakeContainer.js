@@ -17,17 +17,11 @@ const TeamMakeContainer = observer(() => {
 
   const onDrop = (e) => {
     setImage(e.target.files);
-    console.log(e.target.files);
   };
-  console.log(imgURL);
 
   const handleEditorChange = ({ html, text }) => {
     const newValue = text.replace(/\d/g, '');
-    console.log(newValue);
     setValue(newValue);
-    // console.log(mdEditor.current.getMdValue());
-    //
-    //
   };
   const requestHandleTeamMake = useCallback(async () => {
     const data = {
@@ -38,7 +32,6 @@ const TeamMakeContainer = observer(() => {
     };
     try {
       const response = await handleTeamMake(data);
-      console.log(response);
     } catch (error) {
       return error;
     }
@@ -47,7 +40,6 @@ const TeamMakeContainer = observer(() => {
   const requestHandleUpLoad = useCallback(async () => {
     try {
       const response = await handleUpLoad(image);
-      console.log(response);
     } catch (error) {
       return error;
     }

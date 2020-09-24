@@ -16,7 +16,6 @@ const TeamListContainer = observer(() => {
 
   const { handleUserInfo, userName } = store.AuthStore;
 
-  console.log('teamList', teamList);
   const resquestHandleTeamList = useCallback(async () => {
     try {
       await handleTeamList();
@@ -32,7 +31,6 @@ const TeamListContainer = observer(() => {
         const { explain, mainImage, teamName, whoMade } = response.data.team;
         handleInfoContent({ teamName, mainImage, explain, whoMade });
         handleInfoModal();
-        console.log(teamName, mainImage, explain, whoMade);
         return response;
       } catch (error) {
         return error;

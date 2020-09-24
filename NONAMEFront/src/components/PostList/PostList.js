@@ -17,10 +17,6 @@ const PostList = ({
   mainImage,
   requestHandleTeamInfo,
 }) => {
-  console.log(
-    'mainImagemainImagemainImagemainImagemainImagemainImage',
-    mainImage
-  );
   return (
     <>
       <PostListStyles onClick={() => requestHandleTeamInfo(idx)}>

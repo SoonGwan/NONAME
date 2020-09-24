@@ -7,9 +7,7 @@ import SecureLS from 'secure-ls';
 class MyInfoStore {
   @action
   async handleMyInfo() {
-    console.log('asdasd');
     const response = await MyInfoRepository.myInfo();
-    console.log(response);
 
     return response;
   }

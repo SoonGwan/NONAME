@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const PostListStyles = styled.div`
   width: 300px;
   height: 240px;
+  cursor: pointer;
 `;
 
 export const PostItem = styled(PostListStyles)`

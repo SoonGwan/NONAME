@@ -3,7 +3,7 @@ import Template from 'components/common/Template/Template';
 import Write from 'components/Write/Write';
 import TeamMakeContainer from 'container/TeamMakeContainer/TeamMakeContainer';
 
-const MainPage = () => {
+const WritePage = () => {
   return (
     <Template>
       <TeamMakeContainer />
@@ -11,4 +11,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default WritePage;

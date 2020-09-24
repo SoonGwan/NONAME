@@ -10,6 +10,8 @@ import {
   TeamName,
   WhoMade,
   ContentWrap,
+  ButtonWrap,
+  DefaultButton,
 } from './PostInfo.style';
 const PostInfo = ({
   handleInfoModal,
@@ -19,8 +21,6 @@ const PostInfo = ({
   explain,
   isInfoModal,
 }) => {
-  console.log(mainImage.length);
-
   // if (mainImage.length <= 0) {
   //   return mainImage === page404;
   // }
@@ -45,6 +45,7 @@ const PostInfo = ({
             </ContentWrap>
           </div>
         </PostInfoStlyes>
+        <ButtonWrap></ButtonWrap>
       </Modal>
     </>
   );

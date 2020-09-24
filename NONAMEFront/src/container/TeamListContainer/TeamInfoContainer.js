@@ -13,7 +13,6 @@ const TeamInfoContainer = observer(() => {
     mainImage,
     explain,
   } = store.TeamListStore;
-  console.log(teamName);
   return (
     <>
       {isInfoModal ? (
