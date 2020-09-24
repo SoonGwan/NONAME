@@ -2,10 +2,16 @@ import { SERVER } from 'config/config.json';
 import axios from 'axios';
 
 class MyTeamListRepository {
-  myTeamList = async () => {
-    const name = localStorage.getItem('name');
-    const { data } = await axios.post(
+  myTeamList = async (name) => {
+    const { data } = await axios.get(
       `${SERVER}/team/getMyTeam?whoMade=${name}`
+    );
+    return data;
+  };
+
+  teamApplyList = async (idx) => {
+    const { data } = await axios.get(
+      `${SERVER}/applyTeam/teamApplyList?idx=${idx}`
     );
 
     return data;

@@ -1,9 +1,10 @@
 import React from 'react';
+import { MainStyles } from '../Main/Main.style';
 
-const MyTeam = () => {
+const MyTeam = ({ ListMap }) => {
   return (
     <>
-      <div>내 팀 정 보</div>
+      <MainStyles>{ListMap}</MainStyles>
     </>
   );
 };
