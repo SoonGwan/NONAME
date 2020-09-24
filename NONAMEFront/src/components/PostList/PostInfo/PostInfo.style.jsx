@@ -33,3 +33,25 @@ export const ContentWrap = styled.div`
   overflow-y: auto;
   margin-top: 14px;
 `;
+
+export const ButtonWrap = styled.div`
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+`;
+
+export const DefaultButtonSetting = styled.button`
+  width: 160px;
+  height: 40px;
+  background-color: red;
+  border: none;
+`;
+
+export const ApplyButton = styled(DefaultButtonSetting)`
+  background-color: blue;
+`;
+
+export const CancelButton = styled(DefaultButtonSetting)`
+  background-color: #ccc;
+`;

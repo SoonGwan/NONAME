@@ -37,8 +37,8 @@ const Nav = () => {
     <>
       <NavStyles>
         <Nav navName="홈" link={'/'} />
-        <Nav navName="팀을 찾아요" link={'/find'} />
         <Nav navName="팀 만들기" link={'/make'} />
+        <Nav navName="내 팀 보기" link={'/myTeam'} />
         <Nav navName="내 프로필" link={'/my'} />
       </NavStyles>
     </>

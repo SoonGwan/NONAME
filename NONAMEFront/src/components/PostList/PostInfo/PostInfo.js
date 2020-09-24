@@ -10,6 +10,8 @@ import {
   TeamName,
   WhoMade,
   ContentWrap,
+  ButtonWrap,
+  DefaultButton,
 } from './PostInfo.style';
 const PostInfo = ({
   handleInfoModal,
@@ -43,6 +45,7 @@ const PostInfo = ({
             </ContentWrap>
           </div>
         </PostInfoStlyes>
+        <ButtonWrap></ButtonWrap>
       </Modal>
     </>
   );
