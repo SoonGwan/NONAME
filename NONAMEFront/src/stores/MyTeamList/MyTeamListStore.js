@@ -7,7 +7,7 @@ import SecureLS from 'secure-ls';
 class MyTeamListStore {
   @observable myTeam = [];
   @observable myTeamApply_user = [];
-
+  @observable myTeamInfoModal = false;
   @action
   async handleMyTeamList(name) {
     const response = await MyTeamListRepository.myTeamList(name);
@@ -23,6 +23,11 @@ class MyTeamListStore {
     this.myTeamApply_user = response.data.applyTeam;
 
     return response;
+  };
+
+  @action
+  handleMyTeamInfoModal = () => {
+    this.myTeamInfoModal = !this.myTeamInfoModal;
   };
 }
 
