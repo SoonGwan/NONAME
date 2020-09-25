@@ -12,6 +12,7 @@ const MyTeamContainer = observer(() => {
     myTeam,
     handleTeamApplyList,
     myTeamApply_user,
+    handleMyTeamInfoModal,
   } = store.MyTeamList;
   console.log('myTeam', myTeam);
   const requestHandleMyTeamList = useCallback(async () => {
@@ -26,7 +27,9 @@ const MyTeamContainer = observer(() => {
   const requestHandleTeamInfo = useCallback(async (idx) => {
     try {
       const response = await handleTeamApplyList(idx);
+
       console.log(response);
+      handleMyTeamInfoModal();
     } catch (error) {
       console.log(error);
       return error;
