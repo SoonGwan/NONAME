@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import useStore from 'lib/useStores';
 import { observer } from 'mobx-react';
 import PostInfo from 'components/PostList/PostInfo/PostInfo';
@@ -12,7 +12,11 @@ const TeamInfoContainer = observer(() => {
     whoMade,
     mainImage,
     explain,
+    idx,
   } = store.TeamListStore;
+
+  const { handleApplyTeam, handleApplyModal } = store.TeamApply;
+
   return (
     <>
       {isInfoModal ? (
@@ -23,6 +27,7 @@ const TeamInfoContainer = observer(() => {
           mainImage={mainImage}
           explain={explain}
           isInfoModal={isInfoModal}
+          handleApplyModal={handleApplyModal}
         />
       ) : null}
     </>

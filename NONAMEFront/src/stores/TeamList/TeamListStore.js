@@ -10,6 +10,7 @@ class TeamListStore {
   @observable whoMade = '';
   @observable mainImage = '';
   @observable explain = '';
+  @observable idx = '';
 
   @action
   async handleTeamList() {
@@ -31,11 +32,12 @@ class TeamListStore {
   };
 
   @action
-  handleInfoContent = ({ teamName, mainImage, explain, whoMade }) => {
+  handleInfoContent = ({ teamName, mainImage, explain, whoMade, idx }) => {
     this.teamName = teamName;
     this.mainImage = mainImage;
     this.explain = explain;
     this.whoMade = whoMade;
+    this.idx = idx;
   };
 }
 
