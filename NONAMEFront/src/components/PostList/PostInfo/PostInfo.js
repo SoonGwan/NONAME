@@ -13,6 +13,7 @@ import {
   ButtonWrap,
   DefaultButton,
 } from './PostInfo.style';
+import TeamApplyContainer from 'container/TeamListContainer/TeamApplyContainer';
 const PostInfo = ({
   handleInfoModal,
   teamName,
@@ -20,10 +21,12 @@ const PostInfo = ({
   mainImage,
   explain,
   isInfoModal,
+  handleApplyModal,
 }) => {
   // if (mainImage.length <= 0) {
   //   return mainImage === page404;
   // }
+
   return (
     <>
       <Modal
@@ -46,7 +49,9 @@ const PostInfo = ({
           </div>
         </PostInfoStlyes>
         <ButtonWrap></ButtonWrap>
+        <button onClick={() => handleApplyModal()}>클릭</button>
       </Modal>
+      <TeamApplyContainer />
     </>
   );
 };
