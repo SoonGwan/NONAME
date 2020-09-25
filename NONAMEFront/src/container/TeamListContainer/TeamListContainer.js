@@ -28,8 +28,9 @@ const TeamListContainer = observer(() => {
     async (idx) => {
       try {
         const response = await handleTeamInfo(idx);
+        console.log('response', response);
         const { explain, mainImage, teamName, whoMade } = response.data.team;
-        handleInfoContent({ teamName, mainImage, explain, whoMade });
+        handleInfoContent({ teamName, mainImage, explain, whoMade, idx });
         handleInfoModal();
         return response;
       } catch (error) {
