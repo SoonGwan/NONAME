@@ -28,6 +28,12 @@ export default class ApplyTeam {
   })
   team_apply_reason: string;
 
+  @Column({
+    length: 255,
+    nullable: false,
+  })
+  team_connect: string;
+
   @Column('timestamp')
   @CreateDateColumn()
   apply_time: Date;

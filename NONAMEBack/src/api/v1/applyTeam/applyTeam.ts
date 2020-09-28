@@ -8,6 +8,7 @@ export default async (req: Request, res: Response) => {
     user_id: string;
     apply_team_idx: number;
     team_apply_reason: string;
+    team_connect: string;
   };
 
   const data: RequestBody = req.body;
