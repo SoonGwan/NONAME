@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class TeamApplyRepository {
   applyTeam = async (request) => {
-    const { data } = await axios.post(`${SERVER}/team/applyTeam`, request);
+    const { data } = await axios.post(`${SERVER}/applyTeam/applyTeam`, request);
 
     return data;
   };
