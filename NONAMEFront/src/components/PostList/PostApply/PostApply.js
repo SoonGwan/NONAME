@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'components/common/Modal/Modal';
-
+import { InputPostApply, InputExp, InputPhone } from './PostApply.style';
 const PostApply = ({
   handleApplyModal,
   isPress,
@@ -18,12 +18,14 @@ const PostApply = ({
         handleClose={handleApplyModal}
         isPress={isPress}
       >
-        <input
+        <InputExp>팀에 가입하고 싶은 이유 한줄!</InputExp>
+        <InputPostApply
           type="text"
           value={team_apply_reason}
           onChange={(e) => setTeam_apply_reason(e.target.value)}
         />
-        <input
+        <InputPhone>연락처를 남겨주세요!</InputPhone>
+        <InputPostApply
           type="text"
           value={team_connect}
           onChange={(e) => setTeam_connect(e.target.value)}
