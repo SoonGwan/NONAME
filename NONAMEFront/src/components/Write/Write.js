@@ -6,7 +6,12 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-light.css';
 import './Write.scss';
 // import style manually
-import { WriteStyles, TeamName, FileLabel } from './Write.style';
+import {
+  WriteStyles,
+  TeamName,
+  FileLabel,
+  MakeTeamButton,
+} from './Write.style';
 import 'react-markdown-editor-lite/lib/index.css';
 import ImageUploader from 'react-images-upload';
 
@@ -85,7 +90,10 @@ const Write = ({
             },
           }}
         />
-        <button onClick={() => requestHandleTeamMake()}>글쓰기</button>
+
+        <MakeTeamButton onClick={() => requestHandleTeamMake()}>
+          팀 만들기
+        </MakeTeamButton>
       </WriteStyles>
     </>
   );
