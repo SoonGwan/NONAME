@@ -12,6 +12,7 @@ import {
   ContentWrap,
   ButtonWrap,
   DefaultButton,
+  ApplyModalButton,
 } from './PostInfo.style';
 import TeamApplyContainer from 'container/TeamListContainer/TeamApplyContainer';
 const PostInfo = ({
@@ -49,7 +50,9 @@ const PostInfo = ({
           </div>
         </PostInfoStlyes>
         <ButtonWrap></ButtonWrap>
-        <button onClick={() => handleApplyModal()}>클릭</button>
+        <ApplyModalButton onClick={() => handleApplyModal()}>
+          팀에 신청할래요!
+        </ApplyModalButton>
       </Modal>
       <TeamApplyContainer />
     </>
