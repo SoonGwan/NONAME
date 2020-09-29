@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Button } from 'components/common/Button/Button';
 export const PostInfoStlyes = styled.div`
   width: 100%;
   height: 100%;
@@ -54,4 +54,11 @@ export const ApplyButton = styled(DefaultButtonSetting)`
 
 export const CancelButton = styled(DefaultButtonSetting)`
   background-color: #ccc;
+`;
+
+export const ApplyModalButton = styled(Button)`
+  width: 100%;
+  height: 55px;
+  border: none;
+  background-color: #f6f8fa;
 `;
