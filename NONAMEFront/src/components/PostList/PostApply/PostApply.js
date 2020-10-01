@@ -1,6 +1,11 @@
 import React from 'react';
 import Modal from 'components/common/Modal/Modal';
-import { InputPostApply, InputExp, InputPhone } from './PostApply.style';
+import {
+  InputPostApply,
+  InputExp,
+  InputPhone,
+  ApplyButton,
+} from './PostApply.style';
 const PostApply = ({
   handleApplyModal,
   isPress,
@@ -30,7 +35,9 @@ const PostApply = ({
           value={team_connect}
           onChange={(e) => setTeam_connect(e.target.value)}
         />
-        <button onClick={() => requestHandleApplyTeam()}>button</button>
+        <ApplyButton onClick={() => requestHandleApplyTeam()}>
+          ApplyButton
+        </ApplyButton>
       </Modal>
     </>
   );
