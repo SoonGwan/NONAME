@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Input } from 'components/common/Input/Input';
+import { Button } from 'components/common/Button/Button';
 
 export const InputPostApply = styled(Input)`
   width: 100%;
@@ -18,4 +19,12 @@ export const InputExp = styled.div`
 
 export const InputPhone = styled(InputExp)`
   margin-top: 20px;
+`;
+
+export const ApplyButton = styled(Button)`
+  width: 100%;
+  height: 55px;
+  border: none;
+  margin-top: 20px;
+  border-radius: 6px;
 `;
