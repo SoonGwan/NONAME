@@ -2,8 +2,11 @@ import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { observer } from 'mobx-react';
 import useStores from 'lib/useStores';
 import Write from 'components/Write/Write';
+import { withRouter } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
-const TeamMakeContainer = observer(() => {
+const TeamMakeContainer = observer(({ history }) => {
+  toast.configure();
   const { store } = useStores();
   const { handleTeamMake } = store.TeamMakeStore;
   const { handleUpLoad, imgURL } = store.uploadStore;
@@ -14,6 +17,20 @@ const TeamMakeContainer = observer(() => {
   const [whoMade, setWhoMade] = useState('');
   const [image, setImage] = useState();
   const mdEditor = useRef(null);
+
+  if (!localStorage.getItem('name')) {
+    history.push('/');
+    toast.error('로그인 후 이용해주세요!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    return;
+  }
 
   const onDrop = (e) => {
     setImage(e.target.files);
@@ -70,4 +87,4 @@ const TeamMakeContainer = observer(() => {
   );
 });
 
-export default TeamMakeContainer;
+export default withRouter(TeamMakeContainer);

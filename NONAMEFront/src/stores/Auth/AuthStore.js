@@ -35,6 +35,7 @@ class AuthStore {
   @action
   handleLogout = () => {
     sessionStorage.removeItem('token');
+    localStorage.removeItem('name');
     location.reload();
   };
 }

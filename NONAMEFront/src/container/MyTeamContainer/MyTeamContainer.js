@@ -3,9 +3,11 @@ import { observer } from 'mobx-react';
 import useStores from 'lib/useStores';
 import MyTeam from 'components/MyTeam/MyTeam';
 import PostList from 'components/PostList/PostList';
+import { withRouter } from 'react-router-dom';
 import { RiSignalWifiErrorLine } from 'react-icons/ri';
+import { ToastContainer, toast } from 'react-toastify';
 
-const MyTeamContainer = observer(() => {
+const MyTeamContainer = observer(({ history }) => {
   const { store } = useStores();
   const {
     handleMyTeamList,
@@ -15,6 +17,20 @@ const MyTeamContainer = observer(() => {
     handleMyTeamInfoModal,
   } = store.MyTeamList;
   console.log('myTeam', myTeam);
+
+  if (!localStorage.getItem('name')) {
+    history.push('/');
+    toast.error('로그인 후 이용해주세요!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    return;
+  }
   const requestHandleMyTeamList = useCallback(async () => {
     try {
       const name = localStorage.getItem('name');
@@ -62,4 +78,4 @@ const MyTeamContainer = observer(() => {
   );
 });
 
-export default MyTeamContainer;
+export default withRouter(MyTeamContainer);
