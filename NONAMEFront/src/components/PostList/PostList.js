@@ -23,7 +23,9 @@ const PostList = ({
         <PostItem>
           <PostImg
             src={
-              mainImage.includes('.png', 'jpeg', 'jpg') ? mainImage : page404
+              mainImage.includes('.png', '.jpeg', '.jpg', '.svg')
+                ? mainImage
+                : page404
             }
             alt={mainImage}
           />
