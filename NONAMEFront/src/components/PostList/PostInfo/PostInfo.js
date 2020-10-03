@@ -38,7 +38,11 @@ const PostInfo = ({
       >
         <PostInfoStlyes>
           <Thumbnail
-            src={mainImage.length <= 0 ? page404 : IMG + mainImage}
+            src={
+              mainImage.includes('.png', '.jpeg', '.jpg', '.svg')
+                ? mainImage
+                : page404
+            }
             alt=""
           />
           <TeamName>프로젝트 이름: {teamName}</TeamName>

@@ -21,6 +21,10 @@ export const HeaderMenu = styled.div`
 export const HeaderTitle = styled.div`
   margin-top: auto;
   margin-bottom: auto;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translate(-50%);
 `;
 
 export const HeaderTitleItem = styled.span`

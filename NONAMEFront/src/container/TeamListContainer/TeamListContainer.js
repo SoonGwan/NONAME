@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import useStores from 'lib/useStores';
 import PostList from 'components/PostList/PostList';
 import Main from 'components/Main';
+import LoadingBoxList from 'components/common/LoadingBox/LoadingBoxList';
 
 const TeamListContainer = observer(() => {
   const { store } = useStores();
@@ -15,11 +16,15 @@ const TeamListContainer = observer(() => {
   } = store.TeamListStore;
 
   const { handleUserInfo, userName } = store.AuthStore;
+  const [isLoading, setIsLoading] = useState(false);
 
   const resquestHandleTeamList = useCallback(async () => {
+    setIsLoading(true);
     try {
       await handleTeamList();
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       return error;
     }
   }, [handleTeamList]);
@@ -61,11 +66,7 @@ const TeamListContainer = observer(() => {
     );
   });
 
-  return (
-    <>
-      <Main ListMap={ListMap} />
-    </>
-  );
+  return <>{isLoading ? <LoadingBoxList /> : <Main ListMap={ListMap} />}</>;
 });
 
 export default TeamListContainer;
