@@ -9,5 +9,5 @@ export const MainStyles = styled.div`
   width: 640px;
   height: 100%;
   background-color: #fff;
-  margin: auto;
+  margin: 20px auto auto auto;
 `;
