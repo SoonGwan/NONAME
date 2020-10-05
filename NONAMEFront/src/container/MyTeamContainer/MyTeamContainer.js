@@ -6,7 +6,7 @@ import PostList from 'components/PostList/PostList';
 import { withRouter } from 'react-router-dom';
 import { RiSignalWifiErrorLine } from 'react-icons/ri';
 import { ToastContainer, toast } from 'react-toastify';
-
+import { IMG } from 'config/config.json';
 const MyTeamContainer = observer(({ history }) => {
   const { store } = useStores();
   const {
@@ -15,6 +15,8 @@ const MyTeamContainer = observer(({ history }) => {
     handleTeamApplyList,
     myTeamApply_user,
     handleMyTeamInfoModal,
+    handleInfoContent,
+    handleMyTeamInfo,
   } = store.MyTeamList;
   console.log('myTeam', myTeam);
 
@@ -42,15 +44,19 @@ const MyTeamContainer = observer(({ history }) => {
 
   const requestHandleTeamInfo = useCallback(async (idx) => {
     try {
-      const response = await handleTeamApplyList(idx);
-
+      const response = await handleMyTeamInfo(idx);
+      await handleTeamApplyList(idx);
       console.log(response);
+      const { teamName, explain, mainImage, whoMade } = response.data.team;
+
       handleMyTeamInfoModal();
+      handleInfoContent({ teamName, explain, mainImage, whoMade });
+      console.log('12312312312');
     } catch (error) {
       console.log(error);
       return error;
     }
-  });
+  }, []);
 
   useEffect(() => {
     requestHandleMyTeamList();
@@ -58,13 +64,14 @@ const MyTeamContainer = observer(({ history }) => {
 
   const ListMap = myTeam.map((data) => {
     const { idx, teamName, whoMade, mainImage } = data;
+
     return (
       <>
         <PostList
           idx={idx}
           teamName={teamName}
           whoMade={whoMade}
-          mainImage={mainImage}
+          mainImage={IMG + mainImage}
           requestHandleTeamInfo={requestHandleTeamInfo}
         />
       </>
