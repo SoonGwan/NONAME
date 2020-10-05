@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TeamInfoContainer from 'container/TeamListContainer/TeamInfoContainer';
 import page404 from 'components/assets/img/page404.png';
+import FastAverageColor from 'fast-average-color';
+
 import {
   PostListStyles,
   PostItem,
@@ -17,11 +19,21 @@ const PostList = ({
   mainImage,
   requestHandleTeamInfo,
 }) => {
+  const [color, setColor] = useState('');
+  var fac = new FastAverageColor();
+  fac
+    .getColorAsync(
+      mainImage.includes('.png', '.jpeg', '.jpg', '.svg') ? mainImage : page404
+    )
+    .then((color) => {
+      setColor(color.hex);
+    });
   return (
     <>
       <PostListStyles onClick={() => requestHandleTeamInfo(idx)}>
         <PostItem>
           <PostImg
+            style={{ backgroundColor: color }}
             src={
               mainImage.includes('.png', '.jpeg', '.jpg', '.svg')
                 ? mainImage
