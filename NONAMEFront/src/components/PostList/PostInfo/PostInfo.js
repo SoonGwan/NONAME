@@ -39,9 +39,10 @@ const PostInfo = ({
         <PostInfoStlyes>
           <Thumbnail
             src={
-              mainImage.includes('.png', '.jpeg', '.jpg', '.svg')
-                ? IMG + mainImage
-                : page404
+              // mainImage.includes('.png', '.jpeg', '.jpg', '.svg', 'JPG')
+              //   ? IMG + mainImage
+              //   : page404
+              !mainImage ? page404 : IMG + mainImage
             }
             alt=""
           />

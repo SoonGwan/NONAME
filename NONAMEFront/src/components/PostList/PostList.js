@@ -12,6 +12,7 @@ import {
   PostWriterWrap,
   PostWriterName,
 } from './PostList.style';
+import Skeleton from 'react-loading-skeleton';
 const PostList = ({
   idx,
   teamName,
@@ -22,9 +23,7 @@ const PostList = ({
   const [color, setColor] = useState('');
   var fac = new FastAverageColor();
   fac
-    .getColorAsync(
-      mainImage.includes('.png', '.jpeg', '.jpg', '.svg') ? mainImage : page404
-    )
+    .getColorAsync(!mainImage.includes('.') ? page404 : mainImage)
     .then((color) => {
       setColor(color.hex);
     });
@@ -34,13 +33,10 @@ const PostList = ({
         <PostItem>
           <PostImg
             style={{ backgroundColor: color }}
-            src={
-              mainImage.includes('.png', '.jpeg', '.jpg', '.svg')
-                ? mainImage
-                : page404
-            }
+            src={!mainImage.includes('.') ? page404 : mainImage}
             alt={mainImage}
           />
+
           <PostWrap>
             <PostWrapTitle>{teamName}</PostWrapTitle>
             <PostWriterWrap className="PostList-Wrap-whoMade">
