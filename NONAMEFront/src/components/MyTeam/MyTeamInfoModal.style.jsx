@@ -62,3 +62,34 @@ export const ApplyModalButton = styled(Button)`
   border: none;
   background-color: #f6f8fa;
 `;
+
+export const NoExitTeam = styled.div`
+  width: 640px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+`;
+
+export const NoTitle = styled.div`
+  width: 100%;
+  height: 350px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #ccc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MakeTeamTitle = styled.div`
+  width: 100%;
+  margin: auto;
+`;
+
+export const SmallExp = styled.div`
+  color: #ccc;
+  opacity: 0.7;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+`;

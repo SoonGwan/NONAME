@@ -49,6 +49,19 @@ const TeamMakeContainer = observer(({ history }) => {
     };
     try {
       const response = await handleTeamMake(data);
+      const { status } = response;
+      if (status === 200) {
+        toast.success('팀을 성공적으로 만들었어요!', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        history.push('/myTeam');
+      }
     } catch (error) {
       return error;
     }
