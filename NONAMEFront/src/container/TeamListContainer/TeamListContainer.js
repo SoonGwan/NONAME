@@ -4,6 +4,7 @@ import useStores from 'lib/useStores';
 import PostList from 'components/PostList/PostList';
 import Main from 'components/Main';
 import LoadingBoxList from 'components/common/LoadingBox/LoadingBoxList';
+import FastAverageColor from 'fast-average-color';
 
 const TeamListContainer = observer(() => {
   const { store } = useStores();
@@ -47,12 +48,14 @@ const TeamListContainer = observer(() => {
   useEffect(() => {
     resquestHandleTeamList();
   }, []);
+
   useEffect(() => {
     handleUserInfo();
   }, []);
 
   const ListMap = teamList.map((data) => {
     const { idx, teamName, whoMade, mainImage } = data;
+
     return (
       <>
         <PostList
