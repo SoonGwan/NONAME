@@ -11,7 +11,6 @@ const TeamApplyContainer = observer(() => {
   const { store } = useStore();
   const { handleApplyTeam, applyModal, handleApplyModal } = store.TeamApply;
   const { idx } = store.TeamListStore;
-  console.log(idx);
   const requestHandleApplyTeam = useCallback(async () => {
     if (!localStorage.getItem('name')) {
       toast.error('로그인 후 사용해주세요.', {
@@ -35,12 +34,9 @@ const TeamApplyContainer = observer(() => {
     };
 
     try {
-      const response = await handleApplyTeam(data);
-      console.log(response);
+      await handleApplyTeam(data);
       handleApplyModal();
     } catch (error) {
-      console.log(error);
-
       return error;
     }
   });

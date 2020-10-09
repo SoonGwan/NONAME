@@ -1,9 +1,6 @@
 import React from 'react';
 import { SliderStlyes, InnerImg } from './Slider.style';
 const Slider = ({ teamList, list }) => {
-  console.log(teamList);
-  console.log('list', list);
-
   return (
     <>
       <SliderStlyes>

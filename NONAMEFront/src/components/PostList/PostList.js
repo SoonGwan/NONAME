@@ -7,19 +7,12 @@ import moment from 'moment';
 
 import {
   PostListStyles,
-  PostItem,
   PostImg,
-  PostWrap,
-  PostWrapTitle,
-  PostWriterWrap,
-  PostWriterName,
   ImgLayer,
   ImgTitle,
   TitleDoing,
   TitleDoingText,
   UnderCardWrap,
-  WrapUser,
-  TeamMaster,
   RightWrap,
   LeftWrap,
   TitleDoingTextSmall,
@@ -33,7 +26,6 @@ const PostList = ({
   requestHandleTeamInfo,
   teamMakeTime,
 }) => {
-  console.log(moment(teamMakeTime).format('YYYY-MM-DD HH:mm:ss'));
   const [color, setColor] = useState('');
   var fac = new FastAverageColor();
   fac
@@ -43,24 +35,6 @@ const PostList = ({
     });
   return (
     <>
-      {/* <PostListStyles onClick={() => requestHandleTeamInfo(idx)}>
-        <PostItem>
-          <PostImg
-            style={{ backgroundColor: color }}
-            src={!mainImage.includes('.') ? page404 : mainImage}
-            alt={mainImage}
-          />
-
-          <PostWrap>
-            <PostWrapTitle>{teamName}</PostWrapTitle>
-            <PostWriterWrap className="PostList-Wrap-whoMade">
-              <PostWriterName className="PostList-Wrap-whoMade-Name">
-                Made In {whoMade}
-              </PostWriterName>
-            </PostWriterWrap>
-          </PostWrap>
-        </PostItem>
-      </PostListStyles> */}
       <PostListStyles onClick={() => requestHandleTeamInfo(idx)}>
         <ImgLayer></ImgLayer>
 
@@ -81,12 +55,10 @@ const PostList = ({
             {whoMade}
           </LeftWrap>
           <RightWrap>
-            {TimeCounting(moment(teamMakeTime).format('YYYY-MM-DD HH:mm:ss'))}
+            {TimeCounting(moment(teamMakeTime).format('YYYY-MM-DD HH:mm:ss'), {
+              lang: 'ko',
+            }) + ' 만들어짐'}
           </RightWrap>
-          {/* <WrapUser>
-            <TeamMaster>만든이</TeamMaster>
-            asdffasd
-          </WrapUser> */}
         </UnderCardWrap>
       </PostListStyles>
     </>

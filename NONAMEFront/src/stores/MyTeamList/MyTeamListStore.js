@@ -48,7 +48,6 @@ class MyTeamListStore {
     this.explain = explain;
     this.whoMade = whoMade;
     this.idx = idx;
-    console.log(teamName, mainImage, explain, whoMade, idx);
   };
 }
 

@@ -18,7 +18,6 @@ const MyTeamContainer = observer(({ history }) => {
     handleInfoContent,
     handleMyTeamInfo,
   } = store.MyTeamList;
-  console.log('myTeam', myTeam);
 
   if (!localStorage.getItem('name')) {
     history.push('/');
@@ -46,14 +45,11 @@ const MyTeamContainer = observer(({ history }) => {
     try {
       const response = await handleMyTeamInfo(idx);
       await handleTeamApplyList(idx);
-      console.log(response);
       const { teamName, explain, mainImage, whoMade } = response.data.team;
 
       handleMyTeamInfoModal();
       handleInfoContent({ teamName, explain, mainImage, whoMade });
-      console.log('12312312312');
     } catch (error) {
-      console.log(error);
       return error;
     }
   }, []);
@@ -63,7 +59,7 @@ const MyTeamContainer = observer(({ history }) => {
   }, []);
 
   const ListMap = myTeam.map((data) => {
-    const { idx, teamName, whoMade, mainImage } = data;
+    const { idx, teamName, whoMade, mainImage, teamMakeTime } = data;
 
     return (
       <>
@@ -73,6 +69,7 @@ const MyTeamContainer = observer(({ history }) => {
           whoMade={whoMade}
           mainImage={IMG + mainImage}
           requestHandleTeamInfo={requestHandleTeamInfo}
+          teamMakeTime={teamMakeTime}
         />
       </>
     );

@@ -5,7 +5,6 @@ import logger from '../../../lib/logger';
 
 export default async (req: Request, res: Response) => {
   const apply_team_idx = Number(req.query.idx);
-  console.log(apply_team_idx);
   try {
     const applyTeamList = getRepository(ApplyTeam);
     const applyTeam = await applyTeamList.find({
