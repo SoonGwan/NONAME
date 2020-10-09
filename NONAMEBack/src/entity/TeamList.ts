@@ -4,6 +4,7 @@ import {
   PrimaryColumn,
   BaseEntity,
   PrimaryGeneratedColumn,
+  CreateDateColumn,
 } from 'typeorm';
 
 @Entity('TeamList')
@@ -17,8 +18,7 @@ export default class TeamList extends BaseEntity {
   })
   teamName: string;
 
-  @PrimaryColumn({
-    length: 25500,
+  @Column('text', {
     nullable: false,
   })
   explain: string;
@@ -34,4 +34,8 @@ export default class TeamList extends BaseEntity {
     nullable: false,
   })
   whoMade: string;
+
+  @Column('timestamp')
+  @CreateDateColumn()
+  teamMakeTime: Date;
 }
