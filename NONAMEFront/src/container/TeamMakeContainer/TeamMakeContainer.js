@@ -91,7 +91,6 @@ const TeamMakeContainer = observer(({ history }) => {
           progress: undefined,
         });
       }
-      console.log(response);
     } catch (error) {
       return error;
     }

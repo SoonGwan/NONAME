@@ -16,7 +16,6 @@ const SliderContainer = observer(() => {
   const requestHandleTeamList = async () => {
     try {
       const response = await handleTeamList();
-      console.log(response);
       imgPush();
     } catch (err) {
       return err;
