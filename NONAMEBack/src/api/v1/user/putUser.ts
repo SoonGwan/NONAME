@@ -7,7 +7,6 @@ export default async (req: Request, res: Response) => {
   // const user: User = req.user;
 
   const idx: number = Number(req.query.idx);
-  console.log(idx);
 
   if (isNaN(idx)) {
     logger.yellow('검증 오류', 'idx가 nan');

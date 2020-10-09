@@ -5,7 +5,6 @@ import logger from '../../../lib/logger';
 
 export default async (req: Request, res: Response) => {
   const idx: number = Number(req.query.idx);
-  console.log(idx);
   try {
     const teamList = getRepository(TeamList);
     const team: TeamList = await teamList.findOne({

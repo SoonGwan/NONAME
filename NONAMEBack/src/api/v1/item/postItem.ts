@@ -21,7 +21,6 @@ export default async (req: Request, res: Response) => {
         explain: data.explain,
       },
     });
-    console.log(isExists);
     if (isExists) {
       logger.yellow('추가 실패');
       res.status(401).json({

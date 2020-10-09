@@ -17,7 +17,6 @@ export default async (req: Request, res: Response) => {
     const isExists: User = await userRepo.findOne({
       where: [{ id: data.id }, { email: data.email }],
     });
-    console.log(isExists);
 
     if (isExists) {
       logger.yellow('중복된 아이디 아님 이메일');
