@@ -70,6 +70,7 @@ const TeamMakeContainer = observer(({ history }) => {
   const requestHandleUpLoad = useCallback(async () => {
     try {
       const response = await handleUpLoad(image);
+      console.log(response);
     } catch (error) {
       return error;
     }
