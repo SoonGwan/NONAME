@@ -6,6 +6,12 @@ export const HeaderStyles = styled.div`
   width: 640px;
   height: 45px;
   margin: auto;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    height: 45px;
+    margin: auto;
+    padding: 0px 20px;
+  }
 `;
 
 export const HeaderMenu = styled.div`

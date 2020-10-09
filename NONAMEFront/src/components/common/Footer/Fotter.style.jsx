@@ -5,6 +5,10 @@ export const FooterStyles = styled.div`
   width: 640px;
   height: 148px;
   background-color: #f2f2f2;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    margin: auto;
+  }
 `;
 
 export const FooterArea = styled.div`

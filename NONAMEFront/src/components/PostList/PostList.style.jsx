@@ -119,7 +119,7 @@ export const ImgTitle = styled.div`
 export const TitleDoing = styled.div`
   overflow: hidden;
   position: absolute;
-  z-index: 10;
+  z-index: 2;
   width: 300px;
   display: flex;
   flex-direction: row-reverse;

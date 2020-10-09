@@ -10,6 +10,15 @@ export const MainStyles = styled.div`
   height: 100%;
   background-color: #fff;
   margin: 20px auto auto auto;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    margin: 20px auto auto auto;
+  }
 `;
 
 export const MainPinStyles = styled.div`
@@ -20,4 +29,10 @@ export const MainPinStyles = styled.div`
   font-size: 18px;
   font-weight: bold;
   line-height: 1.11;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    padding: 17px 0px 0px 30px;
+
+    margin: auto;
+  }
 `;
