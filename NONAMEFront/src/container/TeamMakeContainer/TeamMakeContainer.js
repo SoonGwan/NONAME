@@ -70,6 +70,27 @@ const TeamMakeContainer = observer(({ history }) => {
   const requestHandleUpLoad = useCallback(async () => {
     try {
       const response = await handleUpLoad(image);
+      if (response) {
+        toast.success('사진을 성공적으로 저장했어요!', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      } else {
+        toast.error('사진을 업로드 하지 못했어요.', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      }
       console.log(response);
     } catch (error) {
       return error;

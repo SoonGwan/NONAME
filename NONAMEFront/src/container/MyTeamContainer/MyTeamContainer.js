@@ -63,7 +63,7 @@ const MyTeamContainer = observer(({ history }) => {
   }, []);
 
   const ListMap = myTeam.map((data) => {
-    const { idx, teamName, whoMade, mainImage } = data;
+    const { idx, teamName, whoMade, mainImage, teamMakeTime } = data;
 
     return (
       <>
@@ -73,6 +73,7 @@ const MyTeamContainer = observer(({ history }) => {
           whoMade={whoMade}
           mainImage={IMG + mainImage}
           requestHandleTeamInfo={requestHandleTeamInfo}
+          teamMakeTime={teamMakeTime}
         />
       </>
     );
