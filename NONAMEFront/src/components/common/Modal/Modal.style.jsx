@@ -11,6 +11,10 @@ export const ModalStyles = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 10;
+  @media screen and (min-width: 480px) {
+    width: 100% !important;
+    height: 70% !important;
+  }
 `;
 
 export const PostBackGround = styled.div`
@@ -33,6 +37,10 @@ export const ModalWrap = styled.div`
   height: 1024px;
   background-color: white;
   z-index: 100;
+  @media screen and (min-width: 480px) {
+    width: 100% !important;
+    height: 70% !important;
+  }
 `;
 
 export const ModalCancel = styled.div`

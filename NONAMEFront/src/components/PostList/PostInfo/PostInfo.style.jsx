@@ -8,6 +8,11 @@ export const PostInfoStlyes = styled.div`
 export const Thumbnail = styled.img`
   width: 100%;
   height: 340px;
+
+  @media screen and (min-width: 480px) {
+    width: 100%;
+    height: 200px;
+  }
 `;
 
 export const TeamName = styled.div`
