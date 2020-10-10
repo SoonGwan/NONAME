@@ -9,18 +9,29 @@ import {
 } from './Modal.style.jsx';
 
 const Modal = ({ handleClose, width, height, children, isPress }) => {
+  const SCREEN_WIDTH = screen.width;
+  if (SCREEN_WIDTH < 480) {
+    console.log('asdf');
+  }
   useEffect(() => {
     isPress === true
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'unset');
     return () => (document.body.style.overflow = 'unset');
   });
-
+  const Modal = {
+    width: width,
+    height: height,
+  };
+  const mobileModal = {
+    width: '100%',
+    height: '90%',
+  };
   return (
     <>
       <ModalStyles>
         <PostBackGround onClick={handleClose}></PostBackGround>
-        <ModalWrap style={{ width: width, height: height }}>
+        <ModalWrap style={SCREEN_WIDTH < 480 ? mobileModal : Modal}>
           <ModalCancel>
             <AiFillCloseSquare
               onClick={() => handleClose()}
