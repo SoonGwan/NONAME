@@ -10,8 +10,7 @@ import {
 
 const Modal = ({ handleClose, width, height, children, isPress }) => {
   const SCREEN_WIDTH = screen.width;
-  if (SCREEN_WIDTH < 480) {
-  }
+
   useEffect(() => {
     isPress === true
       ? (document.body.style.overflow = 'hidden')
