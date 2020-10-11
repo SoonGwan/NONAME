@@ -11,7 +11,6 @@ import {
 const Modal = ({ handleClose, width, height, children, isPress }) => {
   const SCREEN_WIDTH = screen.width;
   if (SCREEN_WIDTH < 480) {
-    console.log('asdf');
   }
   useEffect(() => {
     isPress === true
