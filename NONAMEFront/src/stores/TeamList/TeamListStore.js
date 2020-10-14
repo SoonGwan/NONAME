@@ -11,10 +11,22 @@ class TeamListStore {
   @observable mainImage = '';
   @observable explain = '';
   @observable idx = '';
+  @observable imgList = [];
 
   @action
   async handleTeamList() {
     const response = await TeamListRepository.handleTeamList();
+    const IMGLIST = response.data.team.length;
+
+    this.imgList = [];
+
+    for (let i = 0; i < IMGLIST; i++) {
+      const img = {
+        teamName: response.data.team[i].teamName,
+        img: response.data.team[i].mainImage,
+      };
+      this.imgList = [...this.imgList, img];
+    }
     this.teamList = await response.data.team;
     return response;
   }

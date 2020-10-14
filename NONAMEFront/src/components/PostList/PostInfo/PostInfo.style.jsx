@@ -9,7 +9,7 @@ export const Thumbnail = styled.img`
   width: 100%;
   height: 340px;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (max-width: 480px) {
     width: 100%;
     height: 200px;
   }
@@ -34,9 +34,13 @@ export const WhoMade = styled(TeamName)`
 
 export const ContentWrap = styled.div`
   width: 100%;
-  height: 400px;
+  height: 330px;
   overflow-y: auto;
   margin-top: 14px;
+  @media screen and (max-width: 480px) {
+    height: 140px;
+    overflow-y: auto;
+  }
 `;
 
 export const ButtonWrap = styled.div`
