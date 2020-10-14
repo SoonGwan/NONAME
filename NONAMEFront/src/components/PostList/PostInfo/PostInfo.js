@@ -33,7 +33,7 @@ const PostInfo = ({
       <Modal
         handleClose={handleInfoModal}
         width={'640px'}
-        height={'1024px'}
+        height={'920px'}
         isPress={isInfoModal}
       >
         <PostInfoStlyes>
