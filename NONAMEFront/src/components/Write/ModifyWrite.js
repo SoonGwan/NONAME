@@ -33,8 +33,9 @@ const ModiftyWrite = ({
   requestHandleUpLoad,
   image,
   requestHandleModifyMyTeam,
-  idxs,
+  idx,
 }) => {
+  console.log(idx);
   return (
     <>
       <WriteStyles>
@@ -81,7 +82,7 @@ const ModiftyWrite = ({
           }}
         />
 
-        <MakeTeamButton onClick={() => requestHandleModifyMyTeam(idxs)}>
+        <MakeTeamButton onClick={() => requestHandleModifyMyTeam(idx)}>
           팀 수정하기
         </MakeTeamButton>
       </WriteStyles>
