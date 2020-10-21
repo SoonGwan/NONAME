@@ -5,7 +5,7 @@ import useStore from 'lib/useStores';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const AuthContainer = observer(() => {
+const AuthContainer = observer(({}) => {
   toast.configure();
   const { store } = useStore();
 
