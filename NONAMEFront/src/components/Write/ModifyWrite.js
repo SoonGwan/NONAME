@@ -21,8 +21,8 @@ const ModiftyWrite = ({
   mdEditor,
   handleEditorChange,
   requestHandleTeamMake,
-  teamNameS,
-  setTeamNameS,
+  teamName,
+  setTeamName,
   mainImage,
   setMainImage,
   whoMade,
@@ -32,6 +32,8 @@ const ModiftyWrite = ({
   setPictures,
   requestHandleUpLoad,
   image,
+  requestHandleModifyMyTeam,
+  idxs,
 }) => {
   return (
     <>
@@ -42,21 +44,9 @@ const ModiftyWrite = ({
           <TeamName
             type="text"
             placeholder="팀 이름"
-            value={teamNameS}
-            onChange={(e) => setTeamNameS(e.target.value)}
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
           />
-          <FileLabel for="file">불러오기</FileLabel>
-          <input type="file" id="file" onChange={onDrop} />
-
-          <input
-            className="upload-name"
-            value={image ? '1개의 사진이 선택되었습니다.' : null}
-            // value={(e) => e.target.files.name}
-            onChange={onDrop}
-          />
-          <button className="uploadImg" onClick={() => requestHandleUpLoad()}>
-            사진 업로드
-          </button>
         </div>
 
         {/* <input
@@ -91,8 +81,8 @@ const ModiftyWrite = ({
           }}
         />
 
-        <MakeTeamButton onClick={() => requestHandleTeamMake()}>
-          팀 만들기
+        <MakeTeamButton onClick={() => requestHandleModifyMyTeam(idxs)}>
+          팀 수정하기
         </MakeTeamButton>
       </WriteStyles>
     </>
