@@ -13,33 +13,38 @@ import {
   ApplyModalButton,
 } from './MyTeamInfoModal.style';
 import { IMG } from 'config/config.json';
+import MyTeamModifyContainer from 'container/MyTeamContainer/MyTeamModifyContainer';
 
 const MyTeamInfoModal = ({
   handleMyTeamInfoModal,
   userList,
-  teamName,
-  whoMade,
-  mainImage,
-  explain,
-  idx,
+  teamNames,
+  whoMades,
+  mainImages,
+  explains,
+  idxs,
+  handleModifyTeamModal,
 }) => {
+  console.log(handleModifyTeamModal);
   return (
     <>
       <Modal handleClose={handleMyTeamInfoModal}>
         <PostInfoStlyes>
           <Thumbnail
             src={
-              mainImage.includes('.png', '.jpeg', '.jpg', '.svg')
-                ? IMG + mainImage
+              mainImages.includes('.png', '.jpeg', '.jpg', '.svg')
+                ? IMG + mainImages
                 : page404
             }
             alt=""
           />
-          <TeamName>프로젝트 이름: {teamName}</TeamName>
-          <WhoMade>만든 사람 : {whoMade}</WhoMade>
+          <TeamName>프로젝트 이름: {teamNames}</TeamName>
+          <WhoMade>만든 사람 : {whoMades}</WhoMade>
         </PostInfoStlyes>
         <div>{userList}</div>
+        <button onClick={() => handleModifyTeamModal()}>수정하기</button>
       </Modal>
+      <MyTeamModifyContainer />
     </>
   );
 };
