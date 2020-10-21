@@ -48,7 +48,9 @@ const MyTeamContainer = observer(({ history }) => {
       const { teamName, explain, mainImage, whoMade } = response.data.team;
 
       handleMyTeamInfoModal();
-      handleInfoContent({ teamName, explain, mainImage, whoMade });
+      handleInfoContent({ teamName, explain, mainImage, whoMade, idx });
+      console.log(teamNames);
+      // console.log(teamName);
     } catch (error) {
       return error;
     }
