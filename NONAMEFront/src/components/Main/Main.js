@@ -6,8 +6,6 @@ import SliderContainer from 'container/SliderContainer/SliderContainer';
 const Main = ({ ListMap, randomMessage }) => {
   return (
     <>
-      {/* <SliderContainer /> */}
-
       <MainPinStyles>{randomMessage}</MainPinStyles>
       <MainStyles>{ListMap}</MainStyles>
       <TeamInfoContainer />

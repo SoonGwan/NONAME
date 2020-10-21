@@ -10,11 +10,12 @@ const MyTeamInfoContainer = observer(() => {
     handleMyTeamInfoModal,
     myTeamApply_user,
     handleMyTeamInfo,
-    teamName,
+    teamNames,
     whoMade,
-    mainImage,
+    mainImages,
     explain,
     idx,
+    handleModifyTeamModal,
   } = store.MyTeamList;
 
   const userList = myTeamApply_user.map((data) => {
@@ -41,11 +42,12 @@ const MyTeamInfoContainer = observer(() => {
           handleMyTeamInfoModal={handleMyTeamInfoModal}
           userList={userList}
           handleMyTeamInfo={handleMyTeamInfo}
-          teamName={teamName}
+          teamNames={teamNames}
           whoMade={whoMade}
-          mainImage={mainImage}
+          mainImages={mainImages}
           explain={explain}
           idx={idx}
+          handleModifyTeamModal={handleModifyTeamModal}
         />
       )}
     </>

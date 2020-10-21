@@ -15,7 +15,7 @@ import {
 import 'react-markdown-editor-lite/lib/index.css';
 import ImageUploader from 'react-images-upload';
 
-const Write = ({
+const ModiftyWrite = ({
   value,
   setValue,
   mdEditor,
@@ -32,8 +32,10 @@ const Write = ({
   setPictures,
   requestHandleUpLoad,
   image,
+  requestHandleModifyMyTeam,
+  idx,
 }) => {
-  console.log(teamName);
+  console.log(idx);
   return (
     <>
       <WriteStyles>
@@ -46,18 +48,6 @@ const Write = ({
             value={teamName}
             onChange={(e) => setTeamName(e.target.value)}
           />
-          <FileLabel for="file">불러오기</FileLabel>
-          <input type="file" id="file" onChange={onDrop} />
-
-          <input
-            className="upload-name"
-            value={image ? '1개의 사진이 선택되었습니다.' : null}
-            // value={(e) => e.target.files.name}
-            onChange={onDrop}
-          />
-          <button className="uploadImg" onClick={() => requestHandleUpLoad()}>
-            사진 업로드
-          </button>
         </div>
 
         {/* <input
@@ -92,12 +82,12 @@ const Write = ({
           }}
         />
 
-        <MakeTeamButton onClick={() => requestHandleTeamMake()}>
-          팀 만들기
+        <MakeTeamButton onClick={() => requestHandleModifyMyTeam(idx)}>
+          팀 수정하기
         </MakeTeamButton>
       </WriteStyles>
     </>
   );
 };
 
-export default Write;
+export default ModiftyWrite;

@@ -55,7 +55,7 @@ const PostList = ({
             {whoMade}
           </LeftWrap>
           <RightWrap>
-            {TimeCounting(moment(teamMakeTime).format('YYYY-MM-DD HH:mm:ss'), {
+            {TimeCounting(moment(teamMakeTime).format('YYYY-MM-DDTHH:mm:ss'), {
               lang: 'ko',
             }) + ' 만들어짐'}
           </RightWrap>

@@ -16,6 +16,16 @@ class MyTeamListRepository {
 
     return data;
   };
+
+  modifyMyTeam = async (request, idx) => {
+    console.log(request, idx);
+    const { data } = await axios.put(
+      `${SERVER}/team/modifyTeam?idx=${idx}`,
+      request
+    );
+
+    return data;
+  };
 }
 
 export default new MyTeamListRepository();

@@ -9,11 +9,12 @@ class MyTeamListStore {
   @observable myTeam = [];
   @observable myTeamApply_user = [];
   @observable myTeamInfoModal = false;
-  @observable teamName = '';
-  @observable whoMade = '';
-  @observable mainImage = '';
-  @observable explain = '';
-  @observable idx = '';
+  @observable modifyModal = false;
+  @observable teamNames = '';
+  @observable whoMades = '';
+  @observable mainImages = '';
+  @observable explains = '';
+  @observable idxs = '';
 
   @action
   async handleMyTeamList(name) {
@@ -37,17 +38,32 @@ class MyTeamListStore {
 
     return response;
   };
+
+  @action
+  handleModifyMyTeam = async (request, idx) => {
+    console.log('sadfjhksadjfhg dghfjdasfhjhgjdsafhgjad');
+    const response = await MyTeamListRepository.modifyMyTeam(request, idx);
+
+    return response;
+  };
+
   @action
   handleMyTeamInfoModal = () => {
     this.myTeamInfoModal = !this.myTeamInfoModal;
   };
   @action
   handleInfoContent = ({ teamName, mainImage, explain, whoMade, idx }) => {
-    this.teamName = teamName;
-    this.mainImage = mainImage;
-    this.explain = explain;
-    this.whoMade = whoMade;
-    this.idx = idx;
+    this.teamNames = teamName;
+    this.mainImages = mainImage;
+    this.explains = explain;
+    this.whoMades = whoMade;
+    this.idxs = idx;
+    console.log(teamName);
+  };
+
+  @action
+  handleModifyTeamModal = () => {
+    this.modifyModal = !this.modifyModal;
   };
 }
 
