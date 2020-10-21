@@ -15,14 +15,14 @@ import {
 import 'react-markdown-editor-lite/lib/index.css';
 import ImageUploader from 'react-images-upload';
 
-const Write = ({
+const ModiftyWrite = ({
   value,
   setValue,
   mdEditor,
   handleEditorChange,
   requestHandleTeamMake,
-  teamName,
-  setTeamName,
+  teamNameS,
+  setTeamNameS,
   mainImage,
   setMainImage,
   whoMade,
@@ -33,7 +33,6 @@ const Write = ({
   requestHandleUpLoad,
   image,
 }) => {
-  console.log(teamName);
   return (
     <>
       <WriteStyles>
@@ -43,8 +42,8 @@ const Write = ({
           <TeamName
             type="text"
             placeholder="팀 이름"
-            value={teamName}
-            onChange={(e) => setTeamName(e.target.value)}
+            value={teamNameS}
+            onChange={(e) => setTeamNameS(e.target.value)}
           />
           <FileLabel for="file">불러오기</FileLabel>
           <input type="file" id="file" onChange={onDrop} />
@@ -100,4 +99,4 @@ const Write = ({
   );
 };
 
-export default Write;
+export default ModiftyWrite;
