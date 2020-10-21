@@ -8,26 +8,18 @@ import Slider from 'components/common/Slider/Slider';
 const SliderContainer = observer(() => {
   toast.configure();
   const { store } = useStores();
-  const { handleTeamList, teamList } = store.TeamListStore;
+  const { handleTeamList, teamList, imgList } = store.TeamListStore;
   const [list, setList] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
-
-  const requestHandleTeamList = async () => {
+  console.log('imgListimgList', imgList);
+  const requestHandleTeamList = useCallback(async () => {
     try {
-      const response = await handleTeamList();
-      imgPush();
+      await handleTeamList();
     } catch (err) {
       return err;
     }
-  };
-
-  const imgPush = () => {
-    teamList.map((data) => {
-      const { mainImage, teamName } = data;
-      setList(...[mainImage]);
-    });
-  };
+  });
 
   useEffect(() => {
     requestHandleTeamList();
@@ -35,7 +27,7 @@ const SliderContainer = observer(() => {
 
   return (
     <>
-      <Slider teamList={teamList} list={list} />
+      <Slider imgList={imgList} />
     </>
   );
 });
