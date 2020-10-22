@@ -33,12 +33,9 @@ const Write = ({
   requestHandleUpLoad,
   image,
 }) => {
-  console.log(teamName);
   return (
     <>
       <WriteStyles>
-        {/* <input type="file" onChange={onDrop} /> */}
-
         <div class="filebox">
           <TeamName
             type="text"
