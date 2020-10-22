@@ -23,7 +23,6 @@ const MyTeamInfoContainer = observer(() => {
   const requestDeleteMyTeam = useCallback(async (idx) => {
     try {
       const response = await handleDeleteMyTeam(idx);
-      console.log(response);
       const { status } = response;
       if (status === 200) {
         toast.success('해당팀을 삭제하였습니다.', {
@@ -40,7 +39,6 @@ const MyTeamInfoContainer = observer(() => {
         return;
       }
     } catch (error) {
-      console.log(error);
       return error;
     }
   });

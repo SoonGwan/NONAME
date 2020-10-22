@@ -21,7 +21,6 @@ const MyTeamModifyContainer = observer(() => {
     handleModifyTeamModal,
     handleModifyMyTeam,
   } = store.MyTeamList;
-  //   console.log(idx, mainImage, explain, tseamName);
   const [teamName, setTeamName] = useState('');
   const [explain, setExplain] = useState('');
   const [mainImage, setMainImage] = useState('');
@@ -105,7 +104,6 @@ const MyTeamModifyContainer = observer(() => {
     setTeamName(teamNames);
     setValue(explains);
   }, [setTeamName, teamNames, setValue]);
-  console.log('teamNames', teamNames);
 
   useEffect(() => {
     setTeamName(teamNames);

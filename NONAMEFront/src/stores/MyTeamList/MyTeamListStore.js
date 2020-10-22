@@ -64,7 +64,6 @@ class MyTeamListStore {
     this.explains = explain;
     this.whoMades = whoMade;
     this.idxs = idx;
-    console.log(teamName);
   };
 
   @action

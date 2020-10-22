@@ -12,7 +12,6 @@ const SliderContainer = observer(() => {
   const [list, setList] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
-  console.log('imgListimgList', imgList);
   const requestHandleTeamList = useCallback(async () => {
     try {
       await handleTeamList();
