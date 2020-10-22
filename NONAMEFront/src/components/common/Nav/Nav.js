@@ -11,11 +11,13 @@ const Nav = () => {
     const NavItem = styled.div`
       font-size: 16px;
       font-weight: 500;
-      width: 25%;
+      width: 33.33%;
       justify-content: center;
       text-align: center;
       margin: auto;
       border-bottom: 1.5px solid rgb(207, 207, 207);
+      font-weight: bold;
+
       ${pathname === link
         ? css`
             color: #3200bc;
@@ -39,7 +41,6 @@ const Nav = () => {
         <Nav navName="홈" link={'/'} />
         <Nav navName="팀 만들기" link={'/make'} />
         <Nav navName="내 팀 보기" link={'/myTeam'} />
-        <Nav navName="내 프로필" link={'/my'} />
       </NavStyles>
     </>
   );

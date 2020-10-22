@@ -16,5 +16,5 @@ export const NavStyles = styled.div`
 
 export const NavName = styled.div`
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 14.5px;
 `;
