@@ -93,3 +93,28 @@ export const SmallExp = styled.div`
   font-weight: bold;
   width: 100%;
 `;
+
+export const ButtonWrapDM = styled.div`
+  width: 100%;
+  display: flex;
+  height: 40px;
+  justify-content: space-around;
+`;
+
+export const ModifyButton = styled(Button)`
+  width: 240px;
+  background-color: #f6f8fa;
+  height: 100%;
+  border: none;
+  color: black;
+  border-radius: 2px;
+`;
+
+export const DeleteButton = styled(Button)`
+  width: 240px;
+  height: 100%;
+  border: none;
+  background-color: rgb(229, 103, 99);
+  color: white;
+  border-radius: 2px;
+`;

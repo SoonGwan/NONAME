@@ -11,6 +11,9 @@ import {
   ButtonWrap,
   DefaultButton,
   ApplyModalButton,
+  ButtonWrapDM,
+  ModifyButton,
+  DeleteButton,
 } from './MyTeamInfoModal.style';
 import { IMG } from 'config/config.json';
 import MyTeamModifyContainer from 'container/MyTeamContainer/MyTeamModifyContainer';
@@ -42,7 +45,12 @@ const MyTeamInfoModal = ({
           <WhoMade>만든 사람 : {whoMades}</WhoMade>
         </PostInfoStlyes>
         <div>{userList}</div>
-        <button onClick={() => handleModifyTeamModal()}>수정하기</button>
+        <ButtonWrapDM>
+          <ModifyButton onClick={() => handleModifyTeamModal()}>
+            팀 내용 수정하기
+          </ModifyButton>
+          <DeleteButton>팀 영구 삭제하기</DeleteButton>
+        </ButtonWrapDM>
       </Modal>
       <MyTeamModifyContainer />
     </>
