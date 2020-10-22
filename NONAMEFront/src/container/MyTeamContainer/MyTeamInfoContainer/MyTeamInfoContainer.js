@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import useStores from 'lib/useStores';
 import MyTeamInfoModal from 'components/MyTeam/MyTeamInfoModal';
 import { ToastContainer, toast } from 'react-toastify';
+import UserList from 'components/common/UserList/UserList';
 
 const MyTeamInfoContainer = observer(() => {
   const { store } = useStores();
@@ -57,14 +58,18 @@ const MyTeamInfoContainer = observer(() => {
       idx,
       team_apply_reason,
       user_id,
+      team_connect,
     } = data;
 
     return (
-      <>
-        <div>
-          {apply_team_idx},{apply_time},{idx},{team_apply_reason},{user_id}
-        </div>
-      </>
+      <UserList
+        apply_team_idx={apply_team_idx}
+        apply_time={apply_time}
+        user_id={user_id}
+        team_connect={team_connect}
+        idx={idx}
+        team_apply_reason={team_apply_reason}
+      />
     );
   });
   return (
