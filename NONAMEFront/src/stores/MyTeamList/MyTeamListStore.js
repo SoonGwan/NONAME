@@ -57,6 +57,12 @@ class MyTeamListStore {
   handleMyTeamInfoModal = () => {
     this.myTeamInfoModal = !this.myTeamInfoModal;
   };
+
+  @action
+  handleModifyTeamModal = () => {
+    this.modifyModal = !this.modifyModal;
+  };
+
   @action
   handleInfoContent = ({ teamName, mainImage, explain, whoMade, idx }) => {
     this.teamNames = teamName;
@@ -64,11 +70,6 @@ class MyTeamListStore {
     this.explains = explain;
     this.whoMades = whoMade;
     this.idxs = idx;
-  };
-
-  @action
-  handleModifyTeamModal = () => {
-    this.modifyModal = !this.modifyModal;
   };
 }
 

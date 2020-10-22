@@ -28,6 +28,7 @@ class TeamListStore {
       this.imgList = [...this.imgList, img];
     }
     this.teamList = await response.data.team;
+
     return response;
   }
 
