@@ -28,7 +28,6 @@ const MyTeamInfoModal = ({
   handleModifyTeamModal,
   requestDeleteMyTeam,
 }) => {
-  console.log(idxs);
   return (
     <>
       <Modal handleClose={handleMyTeamInfoModal}>
