@@ -18,10 +18,17 @@ class MyTeamListRepository {
   };
 
   modifyMyTeam = async (request, idx) => {
-    console.log(request, idx);
     const { data } = await axios.put(
       `${SERVER}/team/modifyTeam?idx=${idx}`,
       request
+    );
+
+    return data;
+  };
+
+  deleteMyTeam = async (idx) => {
+    const { data } = await axios.delete(
+      `${SERVER}/team/deleteMyTeam?idx=${idx}`
     );
 
     return data;
