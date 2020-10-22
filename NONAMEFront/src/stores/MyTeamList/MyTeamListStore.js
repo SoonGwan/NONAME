@@ -41,8 +41,14 @@ class MyTeamListStore {
 
   @action
   handleModifyMyTeam = async (request, idx) => {
-    console.log('sadfjhksadjfhg dghfjdasfhjhgjdsafhgjad');
     const response = await MyTeamListRepository.modifyMyTeam(request, idx);
+
+    return response;
+  };
+
+  @action
+  handleDeleteMyTeam = async (idx) => {
+    const response = await MyTeamListRepository.deleteMyTeam(idx);
 
     return response;
   };
@@ -58,7 +64,6 @@ class MyTeamListStore {
     this.explains = explain;
     this.whoMades = whoMade;
     this.idxs = idx;
-    console.log(teamName);
   };
 
   @action

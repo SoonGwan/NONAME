@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'components/common/Modal/Modal';
 import page404 from 'components/assets/img/page404.png';
-
 import {
   PostInfoStlyes,
   Thumbnail,
@@ -11,6 +10,9 @@ import {
   ButtonWrap,
   DefaultButton,
   ApplyModalButton,
+  ButtonWrapDM,
+  ModifyButton,
+  DeleteButton,
 } from './MyTeamInfoModal.style';
 import { IMG } from 'config/config.json';
 import MyTeamModifyContainer from 'container/MyTeamContainer/MyTeamModifyContainer';
@@ -24,8 +26,8 @@ const MyTeamInfoModal = ({
   explains,
   idxs,
   handleModifyTeamModal,
+  requestDeleteMyTeam,
 }) => {
-  console.log(handleModifyTeamModal);
   return (
     <>
       <Modal handleClose={handleMyTeamInfoModal}>
@@ -42,7 +44,14 @@ const MyTeamInfoModal = ({
           <WhoMade>만든 사람 : {whoMades}</WhoMade>
         </PostInfoStlyes>
         <div>{userList}</div>
-        <button onClick={() => handleModifyTeamModal()}>수정하기</button>
+        <ButtonWrapDM>
+          <ModifyButton onClick={() => handleModifyTeamModal()}>
+            팀 내용 수정하기
+          </ModifyButton>
+          <DeleteButton onClick={() => requestDeleteMyTeam(idxs)}>
+            팀 영구 삭제하기
+          </DeleteButton>
+        </ButtonWrapDM>
       </Modal>
       <MyTeamModifyContainer />
     </>
