@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'components/common/Modal/Modal';
 import page404 from 'components/assets/img/page404.png';
-
 import {
   PostInfoStlyes,
   Thumbnail,
@@ -27,8 +26,9 @@ const MyTeamInfoModal = ({
   explains,
   idxs,
   handleModifyTeamModal,
+  requestDeleteMyTeam,
 }) => {
-  console.log(handleModifyTeamModal);
+  console.log(idxs);
   return (
     <>
       <Modal handleClose={handleMyTeamInfoModal}>
@@ -49,7 +49,9 @@ const MyTeamInfoModal = ({
           <ModifyButton onClick={() => handleModifyTeamModal()}>
             팀 내용 수정하기
           </ModifyButton>
-          <DeleteButton>팀 영구 삭제하기</DeleteButton>
+          <DeleteButton onClick={() => requestDeleteMyTeam(idxs)}>
+            팀 영구 삭제하기
+          </DeleteButton>
         </ButtonWrapDM>
       </Modal>
       <MyTeamModifyContainer />
