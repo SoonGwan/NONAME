@@ -35,7 +35,6 @@ const ModiftyWrite = ({
   requestHandleModifyMyTeam,
   idx,
 }) => {
-  console.log(idx);
   return (
     <>
       <WriteStyles>
@@ -81,7 +80,6 @@ const ModiftyWrite = ({
             },
           }}
         />
-
         <MakeTeamButton onClick={() => requestHandleModifyMyTeam(idx)}>
           팀 수정하기
         </MakeTeamButton>
