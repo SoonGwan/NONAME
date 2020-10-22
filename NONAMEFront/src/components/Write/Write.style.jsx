@@ -30,15 +30,3 @@ export const MakeTeamButton = styled(Button)`
   background-color: #f6f8fa;
   margin: 20px 0px;
 `;
-
-export const ButtonWrap = styled.div`
-  width: 100%;
-  display: flex;
-  height: 55px;
-`;
-
-export const ModifyButton = styled(Button)`
-  width: 120px;
-  background-color: #f6f8fa;
-  height: 100%;
-`;
