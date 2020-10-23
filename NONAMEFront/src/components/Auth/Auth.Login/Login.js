@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.scss';
 import Modal from 'components/common/Modal/Modal';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -68,6 +68,9 @@ const Login = ({
           <>
             <div className="Register">
               <div className="Register-Title">진짜로 가입 할거죠?</div>
+              <div className="Register-Login" onClick={() => setIsLogin(true)}>
+                계정이 있어요?
+              </div>
               <div
                 style={{
                   display: 'flex',

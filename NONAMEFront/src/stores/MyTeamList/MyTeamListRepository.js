@@ -6,6 +6,7 @@ class MyTeamListRepository {
     const { data } = await axios.get(
       `${SERVER}/team/getMyTeam?whoMade=${name}`
     );
+
     return data;
   };
 

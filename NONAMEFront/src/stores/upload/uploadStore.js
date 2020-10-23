@@ -10,6 +10,7 @@ class uploadStore {
   async handleUpLoad(request) {
     const response = await uploadRepository.handleUpLoad(request);
     this.imgURL = await response.data.files[0];
+
     return response;
   }
 }
