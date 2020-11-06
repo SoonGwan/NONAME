@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { observer } from 'mobx-react';
 import Login from 'components/Auth/Auth.Login';
 import useStore from 'lib/useStores';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AuthContainer = observer(({}) => {
@@ -67,6 +67,7 @@ const AuthContainer = observer(({}) => {
           progress: undefined,
         });
       }
+
       return error;
     }
   });

@@ -12,10 +12,9 @@ const TeamInfoContainer = observer(() => {
     whoMade,
     mainImage,
     explain,
-    idx,
   } = store.TeamListStore;
 
-  const { handleApplyTeam, handleApplyModal } = store.TeamApply;
+  const { handleApplyModal } = store.TeamApply;
 
   return (
     <>
