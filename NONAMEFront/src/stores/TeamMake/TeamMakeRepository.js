@@ -7,6 +7,12 @@ class TeamMakeRepository {
 
     return data;
   };
+
+  handleTeamCancleApprove = async (request) => {
+    const { data } = await axios.post(`${SERVER}/team/cancelTeam`, request);
+
+    return data;
+  };
 }
 
 export default new TeamMakeRepository();

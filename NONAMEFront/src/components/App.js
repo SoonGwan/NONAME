@@ -10,7 +10,6 @@ const App = () => {
         <Route exact path="/" render={() => <Pages.MainPage />} />
         <Route exact path="/myTeam" render={() => <Pages.MyTeamPage />} />
         <Route exact path="/make" render={() => <Pages.WritePage />} />
-        {/* <Route exact path="/login" render={() => <Pages.LoginPage />} /> */}
       </Switch>
     </>
   );

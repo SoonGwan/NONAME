@@ -44,7 +44,7 @@ export const ButtonWrap = styled.div`
 export const DefaultButtonSetting = styled.button`
   width: 160px;
   height: 40px;
-  background-color: red;
+  /* background-color: red; */
   border: none;
 `;
 
@@ -117,4 +117,10 @@ export const DeleteButton = styled(Button)`
   background-color: rgb(229, 103, 99);
   color: white;
   border-radius: 2px;
+`;
+
+export const ApplyTeamList = styled.div`
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
 `;

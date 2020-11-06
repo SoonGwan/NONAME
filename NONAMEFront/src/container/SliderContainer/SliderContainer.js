@@ -8,10 +8,8 @@ import Slider from 'components/common/Slider/Slider';
 const SliderContainer = observer(() => {
   toast.configure();
   const { store } = useStores();
-  const { handleTeamList, teamList, imgList } = store.TeamListStore;
-  const [list, setList] = useState([]);
+  const { handleTeamList, imgList } = store.TeamListStore;
 
-  const [isLoading, setIsLoading] = useState(false);
   const requestHandleTeamList = useCallback(async () => {
     try {
       await handleTeamList();

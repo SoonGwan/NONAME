@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import useStores from 'lib/useStores';
 import Write from 'components/Write/Write';
 import { withRouter } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const TeamMakeContainer = observer(({ history }) => {
   toast.configure();
@@ -36,7 +36,7 @@ const TeamMakeContainer = observer(({ history }) => {
     setImage(e.target.files);
   };
 
-  const handleEditorChange = ({ html, text }) => {
+  const handleEditorChange = ({ text }) => {
     const newValue = text.replace(/\d/g, '');
     setValue(newValue);
   };

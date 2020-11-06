@@ -6,7 +6,6 @@ import styled, { css } from 'styled-components';
 const Nav = () => {
   const Nav = ({ navName, link }) => {
     const { pathname } = useLocation();
-    // const active = 'Nav-Item-active';
 
     const NavItem = styled.div`
       font-size: 16px;
