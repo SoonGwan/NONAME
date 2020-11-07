@@ -14,7 +14,7 @@ class TeamListStore {
   @observable imgList = [];
 
   @action
-  async handleTeamList() {
+  handleTeamList = async () => {
     const response = await TeamListRepository.handleTeamList();
     const IMGLIST = response.data.team.length;
 
@@ -30,14 +30,14 @@ class TeamListStore {
     this.teamList = await response.data.team;
 
     return response;
-  }
+  };
 
   @action
-  async handleTeamInfo(idx) {
+  handleTeamInfo = async (idx) => {
     const response = await TeamListRepository.handleTeamInfo(idx);
 
     return response;
-  }
+  };
 
   @action
   handleInfoModal = () => {
