@@ -8,24 +8,24 @@ class AuthStore {
   @observable isLoginModal = false;
   @observable userName = '';
   @action
-  async handleLogin(request) {
+  handleLogin = async (request) => {
     const response = await AuthRepository.handleLogin(request);
     return response;
-  }
+  };
 
-  async handleRegister(request) {
+  handleRegister = async (request) => {
     const response = await AuthRepository.handleRegister(request);
 
     return response;
-  }
+  };
 
   @action
-  async handleUserInfo() {
+  handleUserInfo = async () => {
     const response = await AuthRepository.userInfo();
     this.userName = response.data.list.id;
     localStorage.setItem('name', response.data.list.id);
     return response;
-  }
+  };
 
   @action
   handleLoginModal = () => {
