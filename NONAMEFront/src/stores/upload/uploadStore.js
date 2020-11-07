@@ -7,12 +7,12 @@ class uploadStore {
   @observable imgURL = '';
 
   @action
-  async handleUpLoad(request) {
+  handleUpLoad = async (request) => {
     const response = await uploadRepository.handleUpLoad(request);
     this.imgURL = await response.data.files[0];
 
     return response;
-  }
+  };
 }
 
 export default uploadStore;
