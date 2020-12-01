@@ -18,7 +18,7 @@
 | ---------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------- |
 | ![](https://img.icons8.com/color/24/000000/javascript.png) | Javascript | 자바스크립트를 활용하여 빠른 개발을 진행하였습니다.                                 |
 | ![](https://img.icons8.com/plasticine/24/000000/react.png) | React      | 가장 효과적이며 빠르게 개발 할 수 있으며 자신감이 있어 React를 선택하게 되었습니다. |
-| ![](https://img.icons8.com/color/24/000000/sass.png)       | scss       | Scss를 활용하여 퍼블리싱을 진행 하였습니다.                                         |
+| 💅      | styled-components       | styled-components를 사용하여 효율적으로 컴포넌트 스타일링을 진행하였습니다.                                         |
 | &nbsp;                                                     | MobX       | Mobx 를 활용하여 상태관리를 적절히 사용하여 진행하였습니다.                         |
 | ![](https://img.icons8.com/color/24/000000/git.png) | Git&Github | Git을 사용하여 개발 및 업데이트를 진행하였습니다. |
 
