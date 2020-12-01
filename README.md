@@ -29,7 +29,7 @@
 | ---------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------- |
 | ![](https://img.icons8.com/color/24/000000/typescript.png)       | Typescript | 타입스크립트를 활용하여 서버에 안정성을 보다 효율적으로 극대화 하였습니다. |
 | ![](https://img.icons8.com/windows/32/000000/nodejs.png)         | Node       | Nodejs를 사용하여 개발을 진행하였습니다.                                   |
-| ![](https://img.icons8.com/color/24/000000/sass.png)             | Express    | Express를 더하여 효율적으로 개발을 진행할 수 있게 하였습니다.              |
+| ![]()             | Express    | Express를 더하여 효율적으로 개발을 진행할 수 있게 하였습니다.              |
 | ![](https://img.icons8.com/wired/24/000000/database-restore.png) | Mysql      | Mysql을 사용하여 DB를 관리 및 생성하였습니다.                              |
 
 ## NONAME 기능을 미리보고 싶어요!
