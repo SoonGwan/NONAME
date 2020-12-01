@@ -20,10 +20,9 @@
 | ![](https://img.icons8.com/plasticine/24/000000/react.png) | React      | 가장 효과적이며 빠르게 개발 할 수 있으며 자신감이 있어 React를 선택하게 되었습니다. |
 | ![](https://img.icons8.com/color/24/000000/sass.png)       | scss       | Scss를 활용하여 퍼블리싱을 진행 하였습니다.                                         |
 | &nbsp;                                                     | MobX       | Mobx 를 활용하여 상태관리를 적절히 사용하여 진행하였습니다.                         |
-
 | ![](https://img.icons8.com/color/24/000000/git.png) | Git&Github | Git을 사용하여 개발 및 업데이트를 진행하였습니다. |
 
-## NONAMe-Back 은 기술스택이 무엇인가요?
+## NONAME-Back 은 기술스택이 무엇인가요?
 
 |                                                                  | 이름       | 설명                                                                       |
 | ---------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------- |
@@ -31,6 +30,7 @@
 | ![](https://img.icons8.com/windows/32/000000/nodejs.png)         | Node       | Nodejs를 사용하여 개발을 진행하였습니다.                                   |
 | ![]()             | Express    | Express를 더하여 효율적으로 개발을 진행할 수 있게 하였습니다.              |
 | ![](https://img.icons8.com/wired/24/000000/database-restore.png) | Mysql      | Mysql을 사용하여 DB를 관리 및 생성하였습니다.                              |
+| ![](https://img.icons8.com/color/24/000000/git.png) | Git&Github | Git을 사용하여 개발 및 업데이트를 진행하였습니다. |
 
 ## NONAME 기능을 미리보고 싶어요!
 
